@@ -5,6 +5,11 @@ class SiteController < ApplicationController
         @last_game = Statistic.last
     end
 
+    def last_stat_record
+        last_stat_record = Statistic.last
+        render json: last_stat_record.to_json, :status => 200
+    end
+
     def upload_stats
         record = Statistic.create(
             game_date:  params["site"]["GAME_DATE"],
