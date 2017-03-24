@@ -10,13 +10,13 @@
 .last-game, .twitter, .center {
 	margin: 0 auto;
 	float: left;
-	padding: 1%;
 }
 
 .last-game, .twitter {
 	border: 1px white solid;
 	color: white;
 	width: 30%;
+	padding: 1%;
 }
 
 .last-game {
@@ -28,6 +28,5 @@
 }
 
 .center {
-	/*border: 1px black dotted;*/
 	width: 40%;
 }
