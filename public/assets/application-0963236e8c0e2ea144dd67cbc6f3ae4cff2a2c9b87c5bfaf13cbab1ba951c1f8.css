@@ -1,0 +1,1 @@
+body{font-family:'Graduate', cursive}.splash{display:flex;flex-direction:row;flex-wrap:nowrap;float:left;width:100%}.last-game,.twitter,.center{margin:0 auto;float:left;padding:1%}.last-game,.twitter{border:1px white solid;color:white;width:30%}.last-game{background:#DD0031}.twitter{background:#003DA6}.center{border:1px black dotted;width:40%}
