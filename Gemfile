@@ -23,7 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'hirb'
 gem 'twitter'
-gem 'dotenv'
+gem 'dotenv-rails'
 
 group :development, :test do
     gem 'spring'

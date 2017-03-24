@@ -3,6 +3,9 @@ class SiteController < ApplicationController
 
     def splash
         @last_game = Statistic.last
+
+        puts @@twitter.follow("JoelEmbiid")
+        # @@joel.inspect
     end
 
     def last_stat_record
