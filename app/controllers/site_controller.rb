@@ -1,11 +1,11 @@
 class SiteController < ApplicationController
     skip_before_filter :verify_authenticity_token
 
+    # TODO: twitter class
+
     def splash
         @last_game = Statistic.last
-
-        twitter = initialize_twitter
-        @tweets = twitter.user_timeline('JoelEmbiid', count: 5)
+        @tweets    = twitter_feed()
     end
 
     ### RASPI
@@ -39,7 +39,7 @@ class SiteController < ApplicationController
 
      private
 
-        def initialize_twitter
+        def twitter_initialize
             twitter = Twitter::REST::Client.new do |config|
                 config.consumer_key =        ENV['CONSUMER_KEY']
                 config.consumer_secret =     ENV['CONSUMER_SECRET']
@@ -47,4 +47,27 @@ class SiteController < ApplicationController
                 config.access_token_secret = ENV['ACCESS_SECRET']
             end
         end
+
+        def twitter_feed
+            twitter  = twitter_initialize()
+
+            joel     = twitter.user_timeline("joelembiid", count: 5)
+            # mentions = twitter.search("to:joelembiid", result_type: "recent").take(5)
+
+            # tweets = joel.concat mentions
+
+            # tweets.map do |tw| 
+            #     if tw.user.screen_name == "joelembiid"
+            #         tw[:is_joel] = "x-large"
+            #     end
+            # end
+
+            # tweets.each do |tw|
+            #     puts tw.user.screen_name
+            #     puts tw[:is_joel]
+            # end
+
+            # (joel.concat mentions).sort! { |a,b| b.created_at <=> a.created_at }
+        end
+
 end
