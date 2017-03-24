@@ -1,0 +1,15 @@
+.last-game {
+	border: 1px black solid;
+	display: inline-block;
+
+	width: 30%;
+	float: left;
+}
+
+.twitter {
+	border: 1px black solid;
+	display: inline-block;
+
+	width: 30%;	
+	float: right;
+}
