@@ -4,13 +4,7 @@ class SiteController < ApplicationController
     def splash
         @last_game = Statistic.last
 
-        twitter = Twitter::REST::Client.new do |config|
-            config.consumer_key =        ENV['CONSUMER_KEY']
-            config.consumer_secret =     ENV['CONSUMER_SECRET']
-            config.access_token =        ENV['ACCESS_TOKEN']
-            config.access_token_secret = ENV['ACCESS_SECRET']
-        end
-
+        twitter = initialize_twitter
         @tweets = twitter.user_timeline('JoelEmbiid', count: 5)
     end
 
@@ -40,4 +34,15 @@ class SiteController < ApplicationController
 
         render :nothing => true, :status => 200
      end
+
+     private
+
+        def initialize_twitter
+            twitter = Twitter::REST::Client.new do |config|
+                config.consumer_key =        ENV['CONSUMER_KEY']
+                config.consumer_secret =     ENV['CONSUMER_SECRET']
+                config.access_token =        ENV['ACCESS_TOKEN']
+                config.access_token_secret = ENV['ACCESS_SECRET']
+            end
+        end
 end
