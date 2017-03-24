@@ -1,3 +1,12 @@
+.splash {
+	display: flex;                  
+    flex-direction: row;            
+    flex-wrap: nowrap; 
+
+	float: left;
+    width: 100%;
+}
+
 .last-game, .twitter, .middle {
 	margin: 0 auto;
 	float: left;
