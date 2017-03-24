@@ -54,6 +54,9 @@ GEM
     domain_name (0.5.20170223)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.0)
+    dotenv-rails (2.2.0)
+      dotenv (= 2.2.0)
+      railties (>= 3.2, < 5.1)
     equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -200,7 +203,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.1.0)
-  dotenv
+  dotenv-rails
   faker
   hirb
   jbuilder (~> 2.0)
