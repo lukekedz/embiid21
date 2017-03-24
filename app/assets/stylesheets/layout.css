@@ -1,14 +1,8 @@
-html {
-	width: 100%;
-	height: 100%;
-}
+.splash {
+	display: flex;                  
+    flex-direction: row;            
+    flex-wrap: nowrap; 
 
-.container {
-	border: 1px red solid;
-	display: block;
-
-	width: 90%;
-	height: auto;
-
-	margin: auto;
+	float: left;
+    width: 100%;
 }
