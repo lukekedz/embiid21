@@ -3,7 +3,17 @@
 
 	<ul>
 		<% @tweets.each do |tweet| %>
-			<li><%= tweet.created_at.to_s[0..15] %></li>
+			<li>
+				<%= tweet.created_at.to_s[0..15] %>
+					<span class="tw-screen-name"
+						<% if tweet.user.screen_name == "JoelEmbiid" %>
+							style="font-size: x-large;"
+						<% end %>
+					>
+						<%= tweet.user.screen_name %>
+					</span>
+				says:
+			</li>
 			<li><%= tweet.full_text %></li>
 			<br/>
 			<br/>
