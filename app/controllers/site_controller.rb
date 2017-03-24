@@ -4,8 +4,14 @@ class SiteController < ApplicationController
     def splash
         @last_game = Statistic.last
 
-        puts @@twitter.follow("JoelEmbiid")
-        # @@joel.inspect
+        twitter = Twitter::REST::Client.new do |config|
+            config.consumer_key =        ENV['CONSUMER_KEY']
+            config.consumer_secret =     ENV['CONSUMER_SECRET']
+            config.access_token =        ENV['ACCESS_TOKEN']
+            config.access_token_secret = ENV['ACCESS_SECRET']
+        end
+
+        @tweets = twitter.user_timeline('JoelEmbiid', count: 5)
     end
 
     def last_stat_record

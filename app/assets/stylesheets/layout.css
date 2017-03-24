@@ -1,7 +1,14 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
 .container {
 	border: 1px red solid;
 	display: block;
+
 	width: 90%;
+	height: auto;
+
 	margin: auto;
-	height: 750px;
 }
