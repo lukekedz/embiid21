@@ -3,7 +3,9 @@
 
 	<ul>
 		<% @tweets.each do |tweet| %>
+			<li><%= tweet.created_at.to_s[0..15] %></li>
 			<li><%= tweet.full_text %></li>
+			<br/>
 			<br/>
 		<% end %>
 	</ul>
