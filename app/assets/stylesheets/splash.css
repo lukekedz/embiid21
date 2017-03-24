@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.last-game, .twitter, .middle {
+.last-game, .twitter, .center {
 	margin: 0 auto;
 	float: left;
 	padding: 1%;
@@ -27,7 +27,7 @@
 	background: #003DA6;
 }
 
-.middle {
-	border: 1px black dotted;
+.center {
+	/*border: 1px black dotted;*/
 	width: 40%;
 }
