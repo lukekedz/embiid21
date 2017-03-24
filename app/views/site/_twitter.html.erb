@@ -1,4 +1,9 @@
 <div class="twitter">
 	<h4>TWITTER</h4>
 
+	<ul>
+		<% @tweets.each do |tweet| %>
+			<li><%= tweet.full_text %></li>
+		<% end %>
+	</ul>
 </div>

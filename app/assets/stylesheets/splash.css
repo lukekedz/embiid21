@@ -10,6 +10,8 @@
 	border: 1px black solid;
 	display: inline-block;
 
-	width: 30%;	
+	width: 30%;
+	height: auto;
+	
 	float: right;
 }
