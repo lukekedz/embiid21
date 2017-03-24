@@ -8,6 +8,8 @@ class SiteController < ApplicationController
         @tweets = twitter.user_timeline('JoelEmbiid', count: 5)
     end
 
+    ### RASPI
+    ### TODO: make raspberry pi class
     def last_stat_record
         last_stat_record = Statistic.last
         render json: last_stat_record.to_json, :status => 200
