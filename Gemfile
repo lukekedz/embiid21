@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'hirb'
+gem 'twitter'
+gem 'dotenv'
 
 group :development, :test do
     gem 'spring'
