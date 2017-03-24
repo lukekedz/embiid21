@@ -1,0 +1,69 @@
+/* line 1, /Users/lxk051/projects/embiid21/app/assets/stylesheets/main.css.scss */
+html, body {
+  font-family: 'Graduate', cursive;
+  text-align: center;
+}
+
+/* line 6, /Users/lxk051/projects/embiid21/app/assets/stylesheets/main.css.scss */
+ul {
+  list-style: none;
+}
+/* line 1, /Users/lxk051/projects/embiid21/app/assets/stylesheets/splash.css.scss */
+.splash {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  float: left;
+  width: 100%;
+}
+
+/* line 10, /Users/lxk051/projects/embiid21/app/assets/stylesheets/splash.css.scss */
+.last-game, .twitter, .center {
+  margin: 0 auto;
+  float: left;
+  padding: 1%;
+}
+
+/* line 16, /Users/lxk051/projects/embiid21/app/assets/stylesheets/splash.css.scss */
+.last-game, .twitter {
+  border: 1px white solid;
+  color: white;
+  width: 30%;
+}
+
+/* line 22, /Users/lxk051/projects/embiid21/app/assets/stylesheets/splash.css.scss */
+.last-game {
+  background: #DD0031;
+}
+
+/* line 26, /Users/lxk051/projects/embiid21/app/assets/stylesheets/splash.css.scss */
+.twitter {
+  background: #003DA6;
+}
+
+/* line 30, /Users/lxk051/projects/embiid21/app/assets/stylesheets/splash.css.scss */
+.center {
+  /*border: 1px black dotted;*/
+  width: 40%;
+}
+/* line 1, /Users/lxk051/projects/embiid21/app/assets/stylesheets/twitter.css.scss */
+.tw-screen-name {
+  color: red;
+  padding-bottom: 1px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
