@@ -1,1 +1,74 @@
-carousel.html.erb
+<div class="last-game"></div>
+
+<div class="center">
+	<div><h4><%= link_to 'splash', root_path %></h4></div>
+	<br/>
+
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height: 500px;">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	  </ol>
+
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+			<p>OPP: <%= @game_last.opp %></p>
+			<p>SCORE: <%= @game_last.score %></p>
+			<p>MINUTES: <%= @game_last.min %></p>
+			<p>FGM-FGA: <%= @game_last.fgm_fga %></p>
+			<p>PERCENTAGE: <%= @game_last.fg_prct %></p>
+			<p>THREE PT FGM-FGA: <%= @game_last.three_m_a %></p>
+			<p>PERCENTAGE: <%= @game_last.three_prct %></p>
+			<p>FTM-FTA: <%= @game_last.ftm_fta %></p>
+			<p>PERCENTAGE: <%= @game_last.ft_prct %></p>
+			<p>REBOUNDS: <%= @game_last.reb %></p>
+			<p>ASSISTS: <%= @game_last.ast %></p>
+			<p>BLOCKS: <%= @game_last.blk %></p>
+			<p>STEALS: <%= @game_last.stl %></p>
+			<p>POINTS: <%= @game_last.pts %></p>
+
+	      <div class="carousel-caption">
+	      	<!-- <%= @game_last.game_date %> -->
+	      </div>
+	    </div>
+
+	    <div class="item">
+	  		<p>OPP: <%= @game_frst.opp %></p>
+	  		<p>SCORE: <%= @game_frst.score %></p>
+	  		<p>MINUTES: <%= @game_frst.min %></p>
+	  		<p>FGM-FGA: <%= @game_frst.fgm_fga %></p>
+	  		<p>PERCENTAGE: <%= @game_frst.fg_prct %></p>
+	  		<p>THREE PT FGM-FGA: <%= @game_frst.three_m_a %></p>
+	  		<p>PERCENTAGE: <%= @game_frst.three_prct %></p>
+	  		<p>FTM-FTA: <%= @game_frst.ftm_fta %></p>
+	  		<p>PERCENTAGE: <%= @game_frst.ft_prct %></p>
+	  		<p>REBOUNDS: <%= @game_frst.reb %></p>
+	  		<p>ASSISTS: <%= @game_frst.ast %></p>
+	  		<p>BLOCKS: <%= @game_frst.blk %></p>
+	  		<p>STEALS: <%= @game_frst.stl %></p>
+	  		<p>POINTS: <%= @game_frst.pts %></p>
+	      <div class="carousel-caption">
+	      <!-- <%= @game_frst.game_date %> -->
+	      </div>
+	    </div>
+	    
+	  </div>
+
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	    <span class="icon-prev" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	    <span class="icon-next" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+
+
+</div>
+
+<div class="twitter"></div>

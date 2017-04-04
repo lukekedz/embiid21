@@ -9,6 +9,8 @@ class SiteController < ApplicationController
     end
 
     def carousel
+        @game_last = Statistic.last
+        @game_frst = Statistic.first
     end
 
     ### RASPI
