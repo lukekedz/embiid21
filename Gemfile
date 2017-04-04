@@ -25,6 +25,10 @@ gem 'hirb'
 gem 'twitter'
 gem 'dotenv-rails'
 
+# solving problem after brew install postgresql, when trying to restore copy of Heroku db
+# tried bew link readline --force, but still had errors when launching rails c
+gem 'rb-readline' 
+
 group :development, :test do
     gem 'spring'
     gem 'rspec-rails', '~> 3.5'
