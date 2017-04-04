@@ -8,6 +8,9 @@ class SiteController < ApplicationController
         @tweets    = twitter_feed()
     end
 
+    def carousel
+    end
+
     ### RASPI
     ### TODO: make raspberry pi class
     def last_stat_record
