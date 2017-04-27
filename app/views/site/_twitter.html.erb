@@ -1,7 +1,7 @@
 <div class="twitter">
 	<h4>TWITTER</h4>
 
-	<ul>
+	<ul class="list-group">
 		<% @tweets.each do |tweet| %>
 			<li>
 				<%= tweet.created_at.to_s[0..15] %>
