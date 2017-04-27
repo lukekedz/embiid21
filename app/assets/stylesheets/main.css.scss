@@ -7,3 +7,33 @@ html, body {
 ul {
 	list-style: none;
 }
+
+.container {
+    padding: 20px;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+.center, .last-game, .twitter {
+    height: 700px;
+}
+
+.last-game, .twitter {
+    color: white;
+    border: 1px white solid;
+    padding: 1%;
+}
+
+.last-game {
+    background: #DD0031;
+}
+
+.twitter {
+    background: #003DA6;
+}
+
+.tw-screen-name {
+    color: red; 
+}
