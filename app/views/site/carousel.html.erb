@@ -1,50 +1,203 @@
 <div class="row">
-	<div><h4><%= link_to 'splash', root_path %></h4></div>
-	<br/>
-
-	<div id="myCarousel" class="carousel slide anyong" data-ride="carousel" data-interval="false" >
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
-			<li data-target="#myCarousel" data-slide-to="3"></li>
-			<li data-target="#myCarousel" data-slide-to="4" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="5"></li>
-		</ol>
-
-		<!-- 5 games... add 6th for the next game? -->
-		<div class="carousel-inner">
-			<% @games.each_with_index do |g, index| %>
-				<% if index != 4 %>
-					<div class="item">
-				  		<%= g.game_date %>
-					</div>
-				<% end %>
-			<% end %>
-
-			<div class="item active">	
-				<%= @games.last.game_date %>
-			</div>
-
-			<div class="item">
-		  		Next Opponent:
-			</div>
-		</div>
-
-		<!-- Left and right controls -->
-		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#myCarousel" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right"></span>
-			<span class="sr-only">Next</span>
-		</a>
+	<div class="col-md-3 carousel-left">
+		<%= image_tag 'banner2.jpg', :class => 'img-responsive' %>
+		<p><br/></p>
+		<%= image_tag 'ben.jpg', :class => 'img-responsive' %>
 	</div>
 
+	<div class="col-md-6">
+		<h4><%= link_to 'view splash page', root_path %></h4>
+		<h3>Super Dario's Game Stats</h3>
+		<br/>
 
+		<div id="carousel" class="carousel slide anyong" data-ride="carousel" data-interval="4000">
+			<ol class="carousel-indicators">
+				<li data-target="#carousel" data-slide-to="0"></li>
+				<li data-target="#carousel" data-slide-to="1"></li>
+				<li data-target="#carousel" data-slide-to="2"></li>
+				<li data-target="#carousel" data-slide-to="3"></li>
+				<li data-target="#carousel" data-slide-to="4" class="active"></li>
+				<li data-target="#carousel" data-slide-to="5"></li>
+			</ol>
+
+			<div class="carousel-inner">
+				<% @games.each_with_index do |g, index| %>
+					<% if index != 4 %>
+						<div class="item">
+							<p>
+								<strong>DATE:</strong>             
+								<%= g.game_date %>
+							</p>
+							<p class="next-red">
+								<strong >OPP:</strong>              
+								<%= g.opp %>
+							</p>
+							<p class="next-red">
+								<strong>SCORE:</strong>            
+								<%= g.score %>
+							</p>
+							<p class="next-blue">
+								<strong>MINUTES:</strong>          
+								<%= g.min %>
+							</p>
+							<p>
+								<strong>FGM-FGA:</strong>          
+								<%= g.fgm_fga %>
+							</p>
+							<p>
+								<strong>PERCENTAGE:</strong>       
+								<%= g.fg_prct %>
+							</p>
+							<p>
+								<strong>THREE PT FGM-FGA:</strong> 
+								<%= g.three_m_a %>
+							</p>
+							<p>
+								<strong>PERCENTAGE:</strong>       
+								<%= g.three_prct %>
+							</p>
+							<p>
+								<strong>FTM-FTA:</strong>          
+								<%= g.ftm_fta %>
+							</p>
+							<p>
+								<strong>PERCENTAGE:</strong>       
+								<%= g.ft_prct %>
+							</p>
+							<p class="next-blue">
+								<strong>REBOUNDS:</strong>         
+								<%= g.reb %>
+							</p>
+							<p class="next-blue">
+								<strong>ASSISTS:</strong>          
+								<%= g.ast %>
+							</p>
+							<p>
+								<strong>BLOCKS:</strong>           
+								<%= g.blk %>
+							</p>
+							<p>
+								<strong>STEALS:</strong>           
+								<%= g.stl %>
+							</p>
+							<p class="next-blue">
+								<strong>POINTS:</strong>           
+								<%= g.pts %>
+							</p>
+						</div>
+					<% end %>
+				<% end %>
+
+				<div class="item active">	
+					<p>
+						<strong>DATE:</strong>                      
+						<%= @games.last.game_date %>
+					</p>
+					<p class="next-red">
+						<strong>OPP:</strong>      
+						<%= @games.last.opp %>
+					</p>
+					<p class="next-red">
+						<strong>SCORE:</strong>    
+						<%= @games.last.score %>
+					</p>
+					<p class="next-blue">
+						<strong>MINUTES:</strong> 
+						<%= @games.last.min %>
+					</p>
+					<p>
+						<strong>FGM-FGA:</strong>                   
+						<%= @games.last.fgm_fga %>
+					</p>
+					<p>
+						<strong>PERCENTAGE:</strong>                
+						<%= @games.last.fg_prct %>
+					</p>
+					<p>
+						<strong>THREE PT FGM-FGA:</strong>          
+						<%= @games.last.three_m_a %>
+					</p>
+					<p>
+						<strong>PERCENTAGE:</strong>                
+						<%= @games.last.three_prct %>
+					</p>
+					<p>
+						<strong>FTM-FTA:</strong>                   
+						<%= @games.last.ftm_fta %>
+					</p>
+					<p>
+						<strong>PERCENTAGE:</strong>                
+						<%= @games.last.ft_prct %>
+					</p>
+					<p class="next-blue">
+						<strong>REBOUNDS:</strong>                  
+						<%= @games.last.reb %>
+					</p>
+					<p class="next-blue">
+						<strong>ASSISTS:</strong>              
+						<%= @games.last.ast %>
+					</p>
+					<p>
+						<strong>BLOCKS:</strong>               
+						<%= @games.last.blk %>
+					</p>
+					<p>
+						<strong>STEALS:</strong>               
+						<%= @games.last.stl %>
+					</p>
+					<p class="next-blue">
+						<strong>POINTS:</strong>               
+						<%= @games.last.pts %>
+					</p>
+				</div>
+
+				<div class="item">
+			  		<h4>Next Opponent:</h4>
+			  		<p><br/></p>
+			  		<h4 class="next-blue">Return for the Sixers</h4>
+			  		<h4 class="next-blue">2017-2018 Season!</h4>
+			  		<p><br/></p>
+			  		<h4 class="next-red">Visit Embiid21.com daily</h4>
+			  		<h4 class="next-red">for all things Joel Embiid.</h4>
+			  		<p><br/></p>
+			  		<h4 class="next-blue">(Not So Bold) Prediction</h4>
+			  		<h4 class="next-blue">7th seed in playoffs!</h4>
+				</div>
+			</div>
+
+			<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+				<span class="icon-prev" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+				<span class="icon-next" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 carousel-right">
+		<h4>JOEL @ TWITTER</h4>
+		<p><br/><p>
+
+		<ul class="list-group">
+			<% @tweets.each do |tweet| %>
+				<li>
+					<%= tweet.created_at.to_s[0..15] %>
+						<span class="tw-screen-name"
+							style="font-size: 12px;"
+							<% if tweet.user.screen_name == "JoelEmbiid" %>
+								style="font-size: large;"
+							<% end %>
+						>
+							<%= tweet.user.screen_name %>
+						</span>
+					says:
+				</li>
+				<li style="font-size: 14px;"><%= tweet.full_text %></li>
+				<br/>
+				<br/>
+			<% end %>
+		</ul>
+	</div>
 </div>
-
-
-

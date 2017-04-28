@@ -9,7 +9,8 @@ class SiteController < ApplicationController
     end
 
     def carousel
-        @games = Statistic.last(5)
+        @games  = Statistic.last(5)
+        @tweets = twitter_feed()
     end
 
     ### RASPI
