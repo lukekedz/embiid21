@@ -1,1 +1,51 @@
-splash.html.erb
+<div class="row center-align">
+  <div class="col s4" style="border: 1px red solid;">
+    <h5>LATEST GAME STATS</h5>
+    <br/>
+
+    <p>DATE:             <%= @last_game.game_date %></p>
+    <p>OPP:              <%= @last_game.opp %></p>
+    <p>SCORE:            <%= @last_game.score %></p>
+    <p>MINUTES:          <%= @last_game.min %></p>
+    <p>FGM-FGA:          <%= @last_game.fgm_fga %></p>
+    <p>PERCENTAGE:       <%= @last_game.fg_prct %></p>
+    <p>THREE PT FGM-FGA: <%= @last_game.three_m_a %></p>
+    <p>PERCENTAGE:       <%= @last_game.three_prct %></p>
+    <p>FTM-FTA:          <%= @last_game.ftm_fta %></p>
+    <p>PERCENTAGE:       <%= @last_game.ft_prct %></p>
+    <p>REBOUNDS:         <%= @last_game.reb %></p>
+    <p>ASSISTS:          <%= @last_game.ast %></p>
+    <p>BLOCKS:           <%= @last_game.blk %></p>
+    <p>STEALS:           <%= @last_game.stl %></p>
+    <p>POINTS:           <%= @last_game.pts %></p>
+  </div>
+
+  <div class="col s4">
+    <h5>EmbiidFeed.com</h5>
+    <img class="responsive-img" src="/assets/embiid_center.jpg">
+  </div>
+
+  <div class="col s4" style="border: 1px blue solid;">
+    <h5>JOEL @ TWITTER</h5>
+    <br/>
+
+    <ul>
+    <% @tweets.each do |tweet| %>
+      <li>
+        <%= tweet.created_at.to_s[0..15] %>
+          <span 
+            <% if tweet.user.screen_name == "JoelEmbiid" %>
+              style="font-size: large;"
+            <% end %>
+          >
+            <%= tweet.user.screen_name %>
+          </span>
+        says:
+      </li>
+      <li><%= tweet.full_text %></li>
+      <br/>
+      <br/>
+    <% end %>
+    </ul>
+  </div>
+</div>

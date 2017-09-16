@@ -20,21 +20,21 @@ class SiteController < ApplicationController
 
     def upload_stats
     	record = Statistic.create(
-    		game_date:  params["site"]["GAME_DATE"],
-    		opp:        params["site"]["OPP"],
-    		score:      params["site"]["SCORE"],
-    		min:        params["site"]["MIN"],
-    		fgm_fga:    params["site"]["FGM_FGA"],
-    		fg_prct:    params["site"]["FG_PRCT"],
-    		three_m_a:  params["site"]["THREE_M_A"],
-    		three_prct: params["site"]["THREE_PRCT"],
-    		ftm_fta:    params["site"]["FTM_FTA"],
-    		ft_prct:    params["site"]["FT_PRCT"],
-    		reb:        params["site"]["REB"],
-    		ast:        params["site"]["AST"],
-    		blk:        params["site"]["BLK"],
-    		stl:        params["site"]["STL"],
-    		pts:        params["site"]["PTS"]
+    		game_date:  params['site']['GAME_DATE'],
+    		opp:        params['site']['OPP'],
+    		score:      params['site']['SCORE'],
+    		min:        params['site']['MIN'],
+    		fgm_fga:    params['site']['FGM_FGA'],
+    		fg_prct:    params['site']['FG_PRCT'],
+    		three_m_a:  params['site']['THREE_M_A'],
+    		three_prct: params['site']['THREE_PRCT'],
+    		ftm_fta:    params['site']['FTM_FTA'],
+    		ft_prct:    params['site']['FT_PRCT'],
+    		reb:        params['site']['REB'],
+    		ast:        params['site']['AST'],
+    		blk:        params['site']['BLK'],
+    		stl:        params['site']['STL'],
+    		pts:        params['site']['PTS']
     	)
 
     	render :nothing => true, :status => 200
@@ -53,14 +53,14 @@ class SiteController < ApplicationController
 
     def twitter_feed
     	twitter  = twitter_initialize()
-    	joel     = twitter.user_timeline("joelembiid", count: 5)
-      # mentions = twitter.search("to:joelembiid", result_type: "recent").take(5)
+    	joel     = twitter.user_timeline('joelembiid', count: 5)
+      # mentions = twitter.search('to:joelembiid', result_type: 'recent').take(5)
 
       # tweets = joel.concat mentions
 
       # tweets.map do |tw| 
-      #     if tw.user.screen_name == "joelembiid"
-      #         tw[:is_joel] = "x-large"
+      #     if tw.user.screen_name == 'joelembiid'
+      #         tw[:is_joel] = 'x-large'
       #     end
       # end
 
