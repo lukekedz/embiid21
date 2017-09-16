@@ -23,12 +23,6 @@ gem 'hirb'
 gem 'twitter'
 gem 'dotenv-rails'
 
-# bootstrap
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
-gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem 'twitter-bootstrap-rails'
-
 # solving problem after brew install postgresql, when trying to restore copy of Heroku db
 # tried bew link readline --force, but still had errors when launching rails c
 gem 'rb-readline'
