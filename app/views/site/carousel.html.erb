@@ -7,146 +7,142 @@
 
 	<div class="col-md-6">
 		<h4><%= link_to 'view splash page', root_path %></h4>
-		<h3>Super Dario's Game Stats</h3>
+		<h3>Embiid's Game Stats</h3>
 		<br/>
 
 		<div id="carousel" class="carousel slide anyong" data-ride="carousel" data-interval="4000">
 			<ol class="carousel-indicators">
 				<li data-target="#carousel" data-slide-to="0"></li>
-				<li data-target="#carousel" data-slide-to="1"></li>
-				<li data-target="#carousel" data-slide-to="2"></li>
-				<li data-target="#carousel" data-slide-to="3"></li>
-				<li data-target="#carousel" data-slide-to="4" class="active"></li>
-				<li data-target="#carousel" data-slide-to="5"></li>
+				<li data-target="#carousel" data-slide-to="1" class="active"></li>
 			</ol>
 
 			<div class="carousel-inner">
 				<% @games.each_with_index do |g, index| %>
-					<% if index != 4 %>
+					<% if index != 1 %>
 						<div class="item">
 							<p>
-								<strong>DATE:</strong>             
+								<strong>DATE:</strong>
 								<%= g.game_date %>
 							</p>
 							<p class="next-red">
-								<strong >OPP:</strong>              
+								<strong >OPP:</strong>
 								<%= g.opp %>
 							</p>
 							<p class="next-red">
-								<strong>SCORE:</strong>            
+								<strong>SCORE:</strong>
 								<%= g.score %>
 							</p>
 							<p class="next-blue">
-								<strong>MINUTES:</strong>          
+								<strong>MINUTES:</strong>
 								<%= g.min %>
 							</p>
 							<p>
-								<strong>FGM-FGA:</strong>          
+								<strong>FGM-FGA:</strong>
 								<%= g.fgm_fga %>
 							</p>
 							<p>
-								<strong>PERCENTAGE:</strong>       
+								<strong>PERCENTAGE:</strong>
 								<%= g.fg_prct %>
 							</p>
 							<p>
-								<strong>THREE PT FGM-FGA:</strong> 
+								<strong>THREE PT FGM-FGA:</strong>
 								<%= g.three_m_a %>
 							</p>
 							<p>
-								<strong>PERCENTAGE:</strong>       
+								<strong>PERCENTAGE:</strong>
 								<%= g.three_prct %>
 							</p>
 							<p>
-								<strong>FTM-FTA:</strong>          
+								<strong>FTM-FTA:</strong>
 								<%= g.ftm_fta %>
 							</p>
 							<p>
-								<strong>PERCENTAGE:</strong>       
+								<strong>PERCENTAGE:</strong>
 								<%= g.ft_prct %>
 							</p>
 							<p class="next-blue">
-								<strong>REBOUNDS:</strong>         
+								<strong>REBOUNDS:</strong>
 								<%= g.reb %>
 							</p>
 							<p class="next-blue">
-								<strong>ASSISTS:</strong>          
+								<strong>ASSISTS:</strong>
 								<%= g.ast %>
 							</p>
-							<p>
-								<strong>BLOCKS:</strong>           
+							<p class="next-blue">
+								<strong>BLOCKS:</strong>
 								<%= g.blk %>
 							</p>
 							<p>
-								<strong>STEALS:</strong>           
+								<strong>STEALS:</strong>
 								<%= g.stl %>
 							</p>
 							<p class="next-blue">
-								<strong>POINTS:</strong>           
+								<strong>POINTS:</strong>
 								<%= g.pts %>
 							</p>
 						</div>
 					<% end %>
 				<% end %>
 
-				<div class="item active">	
+				<div class="item active">
 					<p>
-						<strong>DATE:</strong>                      
+						<strong>DATE:</strong>
 						<%= @games.last.game_date %>
 					</p>
 					<p class="next-red">
-						<strong>OPP:</strong>      
+						<strong>OPP:</strong>
 						<%= @games.last.opp %>
 					</p>
 					<p class="next-red">
-						<strong>SCORE:</strong>    
+						<strong>SCORE:</strong>
 						<%= @games.last.score %>
 					</p>
 					<p class="next-blue">
-						<strong>MINUTES:</strong> 
+						<strong>MINUTES:</strong>
 						<%= @games.last.min %>
 					</p>
 					<p>
-						<strong>FGM-FGA:</strong>                   
+						<strong>FGM-FGA:</strong>
 						<%= @games.last.fgm_fga %>
 					</p>
 					<p>
-						<strong>PERCENTAGE:</strong>                
+						<strong>PERCENTAGE:</strong>
 						<%= @games.last.fg_prct %>
 					</p>
 					<p>
-						<strong>THREE PT FGM-FGA:</strong>          
+						<strong>THREE PT FGM-FGA:</strong>
 						<%= @games.last.three_m_a %>
 					</p>
 					<p>
-						<strong>PERCENTAGE:</strong>                
+						<strong>PERCENTAGE:</strong>
 						<%= @games.last.three_prct %>
 					</p>
 					<p>
-						<strong>FTM-FTA:</strong>                   
+						<strong>FTM-FTA:</strong>
 						<%= @games.last.ftm_fta %>
 					</p>
 					<p>
-						<strong>PERCENTAGE:</strong>                
+						<strong>PERCENTAGE:</strong>
 						<%= @games.last.ft_prct %>
 					</p>
 					<p class="next-blue">
-						<strong>REBOUNDS:</strong>                  
+						<strong>REBOUNDS:</strong>
 						<%= @games.last.reb %>
 					</p>
 					<p class="next-blue">
-						<strong>ASSISTS:</strong>              
+						<strong>ASSISTS:</strong>
 						<%= @games.last.ast %>
 					</p>
 					<p>
-						<strong>BLOCKS:</strong>               
+						<strong>BLOCKS:</strong>
 						<%= @games.last.blk %>
 					</p>
 					<p>
-						<strong>STEALS:</strong>               
+						<strong>STEALS:</strong>
 						<%= @games.last.stl %>
 					</p>
 					<p class="next-blue">
-						<strong>POINTS:</strong>               
+						<strong>POINTS:</strong>
 						<%= @games.last.pts %>
 					</p>
 				</div>
