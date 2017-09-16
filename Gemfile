@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'hirb'
 gem 'twitter'
 gem 'dotenv-rails'
+gem 'materialize-sass'
 
 # solving problem after brew install postgresql, when trying to restore copy of Heroku db
 # tried bew link readline --force, but still had errors when launching rails c
