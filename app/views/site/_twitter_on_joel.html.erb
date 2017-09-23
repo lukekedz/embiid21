@@ -1,0 +1,15 @@
+<ul>
+<% @tweets_joel.each do |tweet| %>
+  <li>
+    <%= tweet.created_at.to_s[0..15] %>
+      <span>
+        <%= tweet.user.screen_name %>
+      </span>
+    says:
+  </li>
+  <li><%= tweet.full_text %></li>
+  <li class="tweets-on-joel" style="display: none;"><%= tweet.id %></li>
+  <br/>
+  <br/>
+<% end %>
+</ul>
