@@ -52,15 +52,15 @@ class SiteController < ApplicationController
   end
 
   def joel_on_twitter
-  	twitter_initialize().user_timeline('joelembiid', count: 3)
+  	twitter_initialize().user_timeline('joelembiid', count: 4)
   end
 
   def twitter_on_joel
-    twitter_initialize().search('to:joelembiid', result_type: 'recent').take(5)
+    twitter_initialize().search('to:joelembiid', result_type: 'recent').take(4)
   end
 
   def refresh_twitter
-    @tweets_joel = twitter_initialize().search('to:joelembiid', result_type: 'recent').take(5)
+    @tweets_joel = twitter_initialize().search('to:joelembiid', result_type: 'recent').take(4)
     # @tweets_joel.each_with_index do |t, index|
     #   puts 'DISPLAYED TWEET ID: ' + params[:tweets_on_joel][index]
     #   puts 'UPDATED TWEET ID:   ' + t.id.to_s
