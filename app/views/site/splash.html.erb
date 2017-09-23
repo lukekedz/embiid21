@@ -2,28 +2,16 @@
   <div class="col s12 l3">
     <h5>LATEST GAME STATS</h5>
     <br/>
-
-    <p>DATE:             <%= @last_game.game_date %></p>
-    <p>OPP:              <%= @last_game.opp %></p>
-    <p>SCORE:            <%= @last_game.score %></p>
-    <p>MINUTES:          <%= @last_game.min %></p>
-    <p>FGM-FGA:          <%= @last_game.fgm_fga %></p>
-    <p>PERCENTAGE:       <%= @last_game.fg_prct %></p>
-    <p>THREE PT FGM-FGA: <%= @last_game.three_m_a %></p>
-    <p>PERCENTAGE:       <%= @last_game.three_prct %></p>
-    <p>FTM-FTA:          <%= @last_game.ftm_fta %></p>
-    <p>PERCENTAGE:       <%= @last_game.ft_prct %></p>
-    <p>REBOUNDS:         <%= @last_game.reb %></p>
-    <p>ASSISTS:          <%= @last_game.ast %></p>
-    <p>BLOCKS:           <%= @last_game.blk %></p>
-    <p>STEALS:           <%= @last_game.stl %></p>
-    <p>POINTS:           <%= @last_game.pts %></p>
+    <%= render 'game_stats' %>
   </div>
 
   <div class="col s12 l3">
     <h5>EmbiidFeed.com</h5>
-    <img class="responsive-img" src="/assets/cameroon.png">
+    <h6>version 2.0 coming soon!</h6>
     <img class="responsive-img" src="/assets/embiid_center.jpg">
+    <br/>
+    <br/>
+    <img class="responsive-img" src="/assets/cameroon.png">
   </div>
 
   <div class="col s12 l3">
@@ -41,7 +29,7 @@
 
 <div class="row center-align">
   <div class="col s12 l6">
-    <iframe width="480" height="300" src="http://www.youtube.com/embed/<%= @last_game.video_id %>" frameborder="0"></iframe>
+    <iframe width="600" height="400" src="http://www.youtube.com/embed/<%= @last_game.video_id %>" frameborder="0"></iframe>
   </div>
 
   <div class="col s12 l6">
