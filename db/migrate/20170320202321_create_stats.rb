@@ -1,6 +1,6 @@
-class CreateStatistics < ActiveRecord::Migration
+class CreateStats < ActiveRecord::Migration
   def change
-    create_table :statistics do |t|
+    create_table :stats do |t|
         t.string :game_date,  null: false
         t.string :opp,        null: false
         t.string :score,      null: false

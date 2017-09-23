@@ -3,24 +3,25 @@ class SiteController < ApplicationController
 	skip_before_filter :verify_authenticity_token
 
   def splash
-    @last_game = Statistic.last
-    @tweets    = twitter_feed()
+    @last_game   = Stat.last
+    @joel_tweets = joel_on_twitter()
+    @tweets_joel = twitter_on_joel()
   end
 
   # def carousel
-  #   @games  = Statistic.last(5)
+  #   @games  = Stat.last(5)
   # 	@tweets = twitter_feed()
   # end
 
   ### RASPI
   ### TODO: make raspberry pi class
   def last_stat_record
-  	last_stat_record = Statistic.last
+  	last_stat_record = Stat.last
   	render json: last_stat_record.to_json, :status => 200
   end
 
   def upload_stats
-  	record = Statistic.create(
+  	record = Stat.create(
   		game_date:  params['site']['GAME_DATE'],
   		opp:        params['site']['OPP'],
   		score:      params['site']['SCORE'],
@@ -52,24 +53,12 @@ class SiteController < ApplicationController
   	end
   end
 
-  def twitter_feed
-  	twitter  = twitter_initialize()
-  	joel     = twitter.user_timeline('joelembiid', count: 5)
-    # mentions = twitter.search('to:joelembiid', result_type: 'recent').take(5)
+  def joel_on_twitter
+  	twitter_initialize().user_timeline('joelembiid', count: 3)
+  end
 
-    # tweets = joel.concat mentions
+  def twitter_on_joel
 
-    # tweets.map do |tw| 
-    #     if tw.user.screen_name == 'joelembiid'
-    #         tw[:is_joel] = 'x-large'
-    #     end
-    # end
-
-    # tweets.each do |tw|
-    #     puts tw.user.screen_name
-    #     puts tw[:is_joel]
-    # end
-
-    # (joel.concat mentions).sort! { |a,b| b.created_at <=> a.created_at }
+    []
   end
 end
