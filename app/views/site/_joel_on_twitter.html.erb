@@ -1,6 +1,3 @@
-<h5>JOEL @ TWITTER</h5>
-<br/>
-
 <ul>
 <% @joel_tweets.each do |tweet| %>
   <li>
@@ -15,6 +12,7 @@
     says:
   </li>
   <li><%= tweet.full_text %></li>
+  <li class="joel-tweets" style="display: none;"><%= tweet.id %></li>
   <br/>
   <br/>
 <% end %>
