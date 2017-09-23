@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
-  # TODO: remove once Raspi is up & running again
-	skip_before_filter :verify_authenticity_token
+  before_action :ip_authorized?, only: [:last_stat_record, :upload_stats]
+	skip_before_filter :verify_authenticity_token, only: :upload_stats
 
   def splash
     @last_game   = Stat.last
@@ -68,5 +68,25 @@ class SiteController < ApplicationController
     # end
 
     render :partial => 'twitter_on_joel'
+  end
+
+  private
+
+  def ip_authorized?
+    unless ENV['RASPI'] == request.remote_ip && ENV['SECRET'] == params[:secret]
+
+    puts "******************************"
+    puts request
+    puts request.inspect
+    puts request.remote_ip.inspect
+    puts
+    puts "******************************"
+
+    # TODO: email alert
+    respond_to do |format|
+      format.html { render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found }
+      format.xml  { head :not_found }
+      format.any  { head :not_found }
+    end
   end
 end
