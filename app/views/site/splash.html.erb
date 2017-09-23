@@ -30,7 +30,10 @@
 <div class="row center-align">
   <div class="col s12 l6">
     <div class="video-container responsive-video" width="600" height="400" style="margin-bottom: 20px;">
-      <iframe src="http://www.youtube.com/embed/<%= @last_game.video_id %>" frameborder="0" allowfullscreen></iframe>
+      <object>
+        <param name="movie" value="http://www.youtube.com/v/<%= @last_game.video_id %>"></param>
+        <embed src="http://www.youtube.com/v/<%= @last_game.video_id %>" type="application/x-shockwave-flash"></embed>
+      </object>
     </div>
   </div>
 
