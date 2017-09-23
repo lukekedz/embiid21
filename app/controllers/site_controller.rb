@@ -45,7 +45,7 @@ class SiteController < ApplicationController
   private
 
   def twitter_initialize
-  	twitter = Twitter::REST::Client.new do |config|
+  	Twitter::REST::Client.new do |config|
   		config.consumer_key =        ENV['CONSUMER_KEY']
   		config.consumer_secret =     ENV['CONSUMER_SECRET']
   		config.access_token =        ENV['ACCESS_TOKEN']
@@ -58,7 +58,6 @@ class SiteController < ApplicationController
   end
 
   def twitter_on_joel
-
-    []
+    twitter_initialize().search('to:joelembiid', result_type: 'recent').take(4)
   end
 end
