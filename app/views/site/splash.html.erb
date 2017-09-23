@@ -29,10 +29,14 @@
 
 <div class="row center-align">
   <div class="col s12 l6">
-    <iframe width="600" height="400" src="http://www.youtube.com/embed/<%= @last_game.video_id %>" frameborder="0"></iframe>
+    <div class="video-container responsive-video" style="margin-bottom: 20px;">
+      <iframe src="http://www.youtube.com/embed/<%= @last_game.video_id %>" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
 
   <div class="col s12 l6">
-    <iframe src="https://giphy.com/embed/<%= @last_game.player_giphy_id %>" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <div class="video-container responsive-video">
+      <iframe src="https://giphy.com/embed/<%= @last_game.player_giphy_id %>" width="480" height="300" frameBorder="0" allowfullscreen></iframe>
+    </div>
   </div>
 </div>
