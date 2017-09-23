@@ -75,18 +75,20 @@ class SiteController < ApplicationController
   def ip_authorized?
     unless ENV['RASPI'] == request.remote_ip && ENV['SECRET'] == params[:secret]
 
-    puts "******************************"
-    puts request
-    puts request.inspect
-    puts request.remote_ip.inspect
-    puts
-    puts "******************************"
+      puts "******************************"
+      puts request
+      puts request.inspect
+      puts request.remote_ip.inspect
+      puts
+      puts "******************************"
 
-    # TODO: email alert
-    respond_to do |format|
-      format.html { render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found }
-      format.xml  { head :not_found }
-      format.any  { head :not_found }
+      # TODO: email alert
+      respond_to do |format|
+        format.html { render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found }
+        format.xml  { head :not_found }
+        format.any  { head :not_found }
+      end
     end
   end
+  
 end
