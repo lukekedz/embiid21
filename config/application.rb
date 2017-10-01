@@ -13,6 +13,10 @@ module Embiid21
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = :local
 
+    Obscenity.configure do |config|
+      config.replacement = :garbled
+    end
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
