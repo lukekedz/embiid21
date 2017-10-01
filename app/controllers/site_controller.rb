@@ -62,11 +62,11 @@ class SiteController < ApplicationController
   def refresh_twitter
     @tweets_joel = twitter_initialize().search('to:joelembiid', result_type: 'recent').take(4)
 
-    @tweets_joel.each_with_index do |t, index|
-      puts 'DISPLAYED TWEET ID: ' + params[:tweets_on_joel][index]
-      puts 'UPDATED TWEET ID:   ' + t.id.to_s
-      puts
-    end
+    # @tweets_joel.each_with_index do |t, index|
+    #   puts 'DISPLAYED TWEET ID: ' + params[:tweets_on_joel][index]
+    #   puts 'UPDATED TWEET ID:   ' + t.id.to_s
+    #   puts
+    # end
 
     render :partial => 'twitter_on_joel'
   end

@@ -1,17 +1,84 @@
-<div class="row">
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">DATE:             </div><div class="col s4"><%= @last_game.game_date %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">OPP:              </div><div class="col s4"><%= @last_game.opp %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">SCORE:            </div><div class="col s4"><%= @last_game.score %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">MINUTES:          </div><div class="col s4"><%= @last_game.min %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">FGM-FGA:          </div><div class="col s4"><%= @last_game.fgm_fga %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">PERCENTAGE:       </div><div class="col s4"><%= @last_game.fg_prct %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">THREE PT FGM-FGA: </div><div class="col s4"><%= @last_game.three_m_a %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">PERCENTAGE:       </div><div class="col s4"><%= @last_game.three_prct %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">FTM-FTA:          </div><div class="col s4"><%= @last_game.ftm_fta %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">PERCENTAGE:       </div><div class="col s4"><%= @last_game.ft_prct %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">REBOUNDS:         </div><div class="col s4"><%= @last_game.reb %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">ASSISTS:          </div><div class="col s4"><%= @last_game.ast %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">BLOCKS:           </div><div class="col s4"><%= @last_game.blk %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">STEALS:           </div><div class="col s4"><%= @last_game.stl %></div>
-  <div class="col s6 offset-s1 left-align" style="margin-bottom: 5px;">POINTS:           </div><div class="col s4"><%= @last_game.pts %></div>
+<div class="col l5">
+  <div class="row">
+    <div class="col l4">
+      <strong><%= @last_game.opp.last(3) %></strong>
+      <br/>
+      <%= Date.parse(@last_game.game_date).strftime('%^b') %> 
+      <%= Date.parse(@last_game.game_date).strftime('%-d') %>
+    </div>
+    <div class="col l4">
+      <%= @last_game.pts %>
+      <br/>
+      POINTS
+    </div>
+    <div class="col l4">
+      <%= @last_game.min %>
+      <br/>
+      MINUTES
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l4">
+      <%= @last_game.fg_prct %>
+      <br/>
+      FIELD GOAL %
+    </div>
+    <div class="col l4">
+      <%= @last_game.ft_prct %>
+      <br/>
+      FREE THROW %
+    </div>
+    <div class="col l4">
+      <%= @last_game.three_prct %>
+      <br/>
+      THREE POINT %
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l4">
+      <div class="row">
+        <div class="col l6">
+          REB
+          <br/>
+          <%= @last_game.reb %>
+        </div>
+        <div class="col l6">
+          AST
+          <br/>
+          <%= @last_game.ast %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col l6">
+          BLK
+          <br/>
+          <%= @last_game.blk %>
+        </div>
+        <div class="col l6">
+          STL
+          <br/>
+          <%= @last_game.stl %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col l8">
+      <div class="video-container responsive-video" width="480" height="300">
+        <iframe src="https://giphy.com/embed/<%= @last_game.player_giphy_id %>" frameBorder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col l7">
+  <div class="row">
+    <div class="video-container responsive-video highlight-video" width="600" height="400">
+      <object>
+        <param name="movie" value="http://www.youtube.com/v/<%= @last_game.video_id %>"></param>
+        <embed src="http://www.youtube.com/v/<%= @last_game.video_id %>" type="application/x-shockwave-flash"></embed>
+      </object>
+    </div>
+  </div>
 </div>
