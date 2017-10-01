@@ -3,11 +3,11 @@
   <li>
     <%= tweet.created_at.to_s[0..15] %>
       <span>
-        <%= tweet.user.screen_name %>
+        <%= auto_link('@' + tweet.user.screen_name.to_s, target: '_blank' ).html_safe %>
       </span>
     says:
   </li>
-  <li><%= tweet.full_text %></li>
+  <li><%= auto_link(Obscenity.sanitize(tweet.full_text.to_s.dup), target: '_blank').html_safe %></li>
   <li class="tweets-on-joel" style="display: none;"><%= tweet.id %></li>
   <br/>
 <% end %>

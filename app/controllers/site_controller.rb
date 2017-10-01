@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
   before_action :ip_authorized?, only: [:last_stat_record, :upload_stats]
-	skip_before_filter :verify_authenticity_token, only: :upload_stats
+	skip_before_action :verify_authenticity_token, only: :upload_stats
 
   def splash
     @last_game   = Stat.last
@@ -56,16 +56,17 @@ class SiteController < ApplicationController
   end
 
   def twitter_on_joel
-    twitter_initialize().search('to:joelembiid', result_type: 'recent').take(4)
+    twitter_initialize().search('to:joelembiid', result_type: 'recent').take(4)    
   end
 
   def refresh_twitter
     @tweets_joel = twitter_initialize().search('to:joelembiid', result_type: 'recent').take(4)
-    # @tweets_joel.each_with_index do |t, index|
-    #   puts 'DISPLAYED TWEET ID: ' + params[:tweets_on_joel][index]
-    #   puts 'UPDATED TWEET ID:   ' + t.id.to_s
-    #   puts
-    # end
+
+    @tweets_joel.each_with_index do |t, index|
+      puts 'DISPLAYED TWEET ID: ' + params[:tweets_on_joel][index]
+      puts 'UPDATED TWEET ID:   ' + t.id.to_s
+      puts
+    end
 
     render :partial => 'twitter_on_joel'
   end
