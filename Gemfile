@@ -19,21 +19,25 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'hirb'
-gem 'twitter'
-gem 'dotenv-rails'
 gem 'materialize-sass'
-gem 'rubocop'
+
+gem 'hirb'
+gem 'dotenv-rails'
+
+gem 'twitter'
+gem 'twitter-text'
+gem 'obscenity'
 
 # solving problem after brew install postgresql, when trying to restore copy of Heroku db
 # tried bew link readline --force, but still had errors when launching rails c
 gem 'rb-readline'
 
 group :development, :test do
-    gem 'spring'
-    gem 'rspec-rails', '~> 3.5'
-    gem 'faker'
-    gem 'simplecov', :require => false, :group => :test
+  gem 'spring'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'faker'
+  gem 'simplecov', :require => false, :group => :test
+  gem 'rubocop'
 end
 
 group :production do
