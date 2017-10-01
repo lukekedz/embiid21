@@ -3,7 +3,7 @@ class SiteController < ApplicationController
 	skip_before_action :verify_authenticity_token, only: :upload_stats
 
   def splash
-    @last_game   = Stat.last
+    # @last_game   = Stat.last
     @stats       = Stat.all
     @joel_tweets = joel_on_twitter()
     @tweets_joel = twitter_on_joel()

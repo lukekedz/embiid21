@@ -1,21 +1,22 @@
 $(document).ready(function() {
 
-  setInterval(function(){
-    var tweetsOnJoelHiddenLi = $(".tweets-on-joel");
-    var tweetsOnJoel         = [];
+  // TODO: refresh both feeds!
+  // setInterval(function(){
+  //   var tweetsOnJoelHiddenLi = $(".tweets-on-joel");
+  //   var tweetsOnJoel         = [];
 
-    for (var i = 0; i < tweetsOnJoelHiddenLi.length; i++) {
-      tweetsOnJoel.push(tweetsOnJoelHiddenLi[i].innerHTML)
-    }
+  //   for (var i = 0; i < tweetsOnJoelHiddenLi.length; i++) {
+  //     tweetsOnJoel.push(tweetsOnJoelHiddenLi[i].innerHTML)
+  //   }
 
-    $.ajax({
-      type: "GET",
-      url: "/site/refresh_twitter",
-      data: { tweets_on_joel: tweetsOnJoel },
-      success: function(data){
-        $("#twitter-on-joel").empty();
-        $("#twitter-on-joel").html(data);
-      }
-    });
-  }, 60000);
+  //   $.ajax({
+  //     type: "GET",
+  //     url: "/site/refresh_twitter",
+  //     data: { tweets_on_joel: tweetsOnJoel },
+  //     success: function(data){
+  //       $("#twitter-on-joel").empty();
+  //       $("#twitter-on-joel").html(data);
+  //     }
+  //   });
+  // }, 60000);
 });

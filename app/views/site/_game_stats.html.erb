@@ -1,18 +1,18 @@
 <div class="col l5">
   <div class="row">
     <div class="col l4">
-      <strong><%= @last_game.opp.last(3) %></strong>
+      <strong><%= game.opp.last(3) %></strong>
       <br/>
-      <%= Date.parse(@last_game.game_date).strftime('%^b') %> 
-      <%= Date.parse(@last_game.game_date).strftime('%-d') %>
+      <%= Date.parse(game.game_date).strftime('%^b') %> 
+      <%= Date.parse(game.game_date).strftime('%-d') %>
     </div>
     <div class="col l4">
-      <%= @last_game.pts %>
+      <%= game.pts %>
       <br/>
       POINTS
     </div>
     <div class="col l4">
-      <%= @last_game.min %>
+      <%= game.min %>
       <br/>
       MINUTES
     </div>
@@ -20,17 +20,17 @@
 
   <div class="row">
     <div class="col l4">
-      <%= @last_game.fg_prct %>
+      <%= game.fg_prct %>
       <br/>
       FIELD GOAL %
     </div>
     <div class="col l4">
-      <%= @last_game.ft_prct %>
+      <%= game.ft_prct %>
       <br/>
       FREE THROW %
     </div>
     <div class="col l4">
-      <%= @last_game.three_prct %>
+      <%= game.three_prct %>
       <br/>
       THREE POINT %
     </div>
@@ -42,31 +42,31 @@
         <div class="col l6">
           REB
           <br/>
-          <%= @last_game.reb %>
+          <%= game.reb %>
         </div>
         <div class="col l6">
           AST
           <br/>
-          <%= @last_game.ast %>
+          <%= game.ast %>
         </div>
       </div>
       <div class="row">
         <div class="col l6">
           BLK
           <br/>
-          <%= @last_game.blk %>
+          <%= game.blk %>
         </div>
         <div class="col l6">
           STL
           <br/>
-          <%= @last_game.stl %>
+          <%= game.stl %>
         </div>
       </div>
     </div>
 
     <div class="col l8">
       <div class="video-container responsive-video" width="480" height="300">
-        <iframe src="https://giphy.com/embed/<%= @last_game.player_giphy_id %>" frameBorder="0" allowfullscreen></iframe>
+        <iframe src="https://giphy.com/embed/<%= game.player_giphy_id %>" frameBorder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -76,8 +76,8 @@
   <div class="row">
     <div class="video-container responsive-video highlight-video" width="600" height="400">
       <object>
-        <param name="movie" value="http://www.youtube.com/v/<%= @last_game.video_id %>"></param>
-        <embed src="http://www.youtube.com/v/<%= @last_game.video_id %>" type="application/x-shockwave-flash"></embed>
+        <param name="movie" value="http://www.youtube.com/v/<%= game.video_id %>"></param>
+        <embed src="http://www.youtube.com/v/<%= game.video_id %>" type="application/x-shockwave-flash"></embed>
       </object>
     </div>
   </div>
