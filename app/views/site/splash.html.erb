@@ -1,3 +1,25 @@
 <div class="row center-align stats">
   <%= render 'game_stats' %>
 </div>
+
+<div class="row">
+  <div class="col l2 offset-l1" style="border: 1px red solid;">
+    <%= image_tag @stats[0].opp.last(3) + '.png', :class => 'responsive-img team-logo', :onclick => "swapGame(#{@stats[0].id});" %>
+  </div>
+
+  <div class="col l2" style="border: 1px red solid;">
+    <%= image_tag @stats[1].opp.last(3) + '.png', :class => 'responsive-img team-logo', :onclick => "swapGame(#{@stats[1].id});" %>
+  </div>
+
+  <div class="col l2" style="border: 1px red solid;">
+    <%= image_tag @stats[2].opp.last(3) + '.png', :class => 'responsive-img team-logo', :onclick => "swapGame(#{@stats[2].id});" %>
+  </div>
+
+  <div class="col l2" style="border: 1px red solid;">
+    <%= image_tag @stats[3].opp.last(3) + '.png', :class => 'responsive-img team-logo', :onclick => "swapGame(#{@stats[3].id});" %>
+  </div>
+
+  <div class="col l2" style="border: 1px red solid;">
+    2017-18<br/>SEASON
+  </div>
+</div>

@@ -4,6 +4,7 @@ class SiteController < ApplicationController
 
   def splash
     @last_game   = Stat.last
+    @stats       = Stat.all
     @joel_tweets = joel_on_twitter()
     @tweets_joel = twitter_on_joel()
   end
