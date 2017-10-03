@@ -1,4 +1,4 @@
-<ul>
+<ul style="height: 300px; overflow-y: scroll;">
 <% @joel_tweets.each do |tweet| %>
   <li>
     <%= tweet.created_at.to_s[0..15] %>

@@ -7,7 +7,7 @@ html {
 .container {
   margin: 0 auto;
   max-width: 1280px;
-  width: 90%;
+  width: 70%;
 }
 
 .stats {
@@ -19,6 +19,9 @@ html {
   }
 
   .highlight-video {
-    margin: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 8px;
   }
 }

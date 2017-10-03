@@ -1,4 +1,6 @@
-<div class="col l5">
+<div class="col l5 stats">
+  <div class="row"></div>
+
   <div class="row">
     <div class="col l4">
       <strong><%= game.opp.last(3) %></strong>
@@ -37,6 +39,7 @@
   </div>
 
   <div class="row">
+
     <div class="col l4">
       <div class="row">
         <div class="col l6">
@@ -50,6 +53,7 @@
           <%= game.ast %>
         </div>
       </div>
+
       <div class="row">
         <div class="col l6">
           BLK
@@ -65,16 +69,19 @@
     </div>
 
     <div class="col l8">
-      <div class="video-container responsive-video" width="480" height="300">
-        <iframe src="https://giphy.com/embed/<%= game.player_giphy_id %>" frameBorder="0" allowfullscreen></iframe>
+      <div class="row">
+        <div class="video-container responsive-video" width="480" height="300">
+          <iframe src="https://giphy.com/embed/<%= game.player_giphy_id %>" frameBorder="0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 
-<div class="col l7">
+<div class="col l7 stats">
   <div class="row">
-    <div class="video-container responsive-video highlight-video" width="600" height="400">
+    <div class="video-container responsive-video highlight-video">
       <object>
         <param name="movie" value="http://www.youtube.com/v/<%= game.video_id %>"></param>
         <embed src="http://www.youtube.com/v/<%= game.video_id %>" type="application/x-shockwave-flash"></embed>

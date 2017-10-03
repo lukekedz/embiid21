@@ -1,13 +1,12 @@
 <br/>
-<br/>
 
 <% @stats.each do |game| %>
   <% if game.id == @stats[-1].id %>
-    <div class="row center-align stats" id="game-<%= game.id %>">
+    <div class="row center-align" id="game-<%= game.id %>">
       <%= render 'game_stats', game: game %>
     </div>
   <% else %>
-    <div class="row center-align stats" style="display: none;" id="game-<%= game.id %>">
+    <div class="row center-align" style="display: none;" id="game-<%= game.id %>">
       <%= render 'game_stats', game: game %>
     </div>
   <% end %>
@@ -79,4 +78,18 @@
     </div>
   </div>
 
+</div>
+
+<div class="row">
+  <div class="col l7">
+    <h5>JOEL SAYS</h5>
+    <br/>
+    <span id="joel-on-twitter"><%= render 'joel_on_twitter' %></span>
+  </div>
+
+  <div class="col l5">
+    <h5>WE SAY</h5>
+    <br/>
+    <span id="twitter-on-joel"><%= render 'twitter_on_joel' %></span>
+  </div>
 </div>
