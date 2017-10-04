@@ -2,18 +2,18 @@
 
 <% @stats.each do |game| %>
   <% if game.id == @stats[-1].id %>
-    <div class="row center-align" id="game-<%= game.id %>" style="border: 1px red solid;">
+    <div class="row center-align" id="game-<%= game.id %>">
       <%= render 'game_stats', game: game %>
     </div>
   <% else %>
-    <div class="row center-align" id="game-<%= game.id %>" style="display: none; border: 1px red solid;">
+    <div class="row center-align" id="game-<%= game.id %>" style="display: none;">
       <%= render 'game_stats', game: game %>
     </div>
   <% end %>
 <% end %>
 
 <!-- TODO: iteration; arrows for scrolling? -->
-<div class="row" style="border: 1px blue solid; background: rgba(255,255,255,0.8);">
+<div class="row" style="background: rgba(255,255,255,0.8);">
   <div class="col l2" id="game-load-logo-0">
     <div class="row" onclick="swapGame(<%= @stats[0].id %>);" id="text">
       <div class="col l4">
@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <div class="row center-align" id="logo" style="background-color: #D3D3D3; border: 1px red solid;">
+    <div class="row center-align" id="logo" style="background-color: #D3D3D3;">
       <%= image_tag @stats[4].opp.last(3) + '.png', :class => 'responsive-img team-logo', :onclick => "swapGame(#{@stats[4].id});" %>
     </div>
   </div>
@@ -102,12 +102,12 @@
 </div>
 
 <div class="row">
-  <div class="col l7" style="border: 1px red solid;">
+  <div class="col l7">
     <h5 style="margin-left: 1%;">JOEL EMBIID SAYS</h5>
     <span id="joel-on-twitter"><%= render 'joel_on_twitter' %></span>
   </div>
 
-  <div class="col l5" style="border: 1px red solid;">
+  <div class="col l5">
     <h5>SIXERS' NATION SAYS</h5>
     <span id="twitter-on-joel"><%= render 'twitter_on_joel' %></span>
   </div>

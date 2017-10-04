@@ -29,3 +29,44 @@ body {
 .team-logo {
   width: 75px;
 }
+
+
+.flag-stripe-w {
+  overflow: auto;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background: white;
+  height: 112.5%;
+  width: 30px;
+}
+
+.flag-stripe-y {
+  overflow: auto;
+  position: absolute;
+  right: 30px;
+  top: 0px;
+  background: #fdd016;
+  height: 112.5%;
+  width: 35px;
+}
+
+.flag-stripe-r {
+  overflow: auto;
+  position: absolute;
+  right: 60px;
+  top: 0px;
+  background: #cf1028;
+  height: 112.5%;
+  width: 40px;
+}
+
+.flag-stripe-g {
+  overflow: auto;
+  position: absolute;
+  right: 90px;
+  top: 0px;
+  background: #00795f;
+  height: 112.5%;
+  width: 45px;
+}
