@@ -1,0 +1,45 @@
+<% @games.each do |g| %>
+  <% if (g.id + 1) == @next_game[0].id %>
+
+    <div class="col l2" id="game-load-logo-<%= g.id %>">
+      <div class="row" onclick="swapGame(<%= g.id %>);" id="text" style="display: none;">
+        <div class="col l4">
+          <h6><%= Date.parse(g.game_date).strftime('%^b') %></h6>
+          <h4><%= Date.parse(g.game_date).strftime('%-d') %></h4>
+        </div>
+        <div class="col l8">
+          <h5><%= g.opp.last(3) %></h5>
+        </div>
+      </div>
+
+      <div class="row center-align" id="logo" style="background-color: #D3D3D3;">
+        <%= image_tag g.opp.last(3) + '.png', :class => 'responsive-img team-logo', :onclick => "swapGame(#{g.id});" %>
+      </div>
+    </div>
+
+  <% else %>
+
+    <div class="col l2" id="game-load-logo-<%= g.id %>">
+      <div class="row" onclick="swapGame(<%= g.id %>);" id="text">
+        <div class="col l4">
+          <h6><%= Date.parse(g.game_date).strftime('%^b') %></h6>
+          <h4><%= Date.parse(g.game_date).strftime('%-d') %></h4>
+        </div>
+        <div class="col l8">
+          <h5><%= g.opp.last(3) %></h5>
+        </div>
+      </div>
+
+      <div class="row center-align" style="display: none;" id="logo">
+        <%= image_tag g.opp.last(3) + '.png', :class => 'responsive-img team-logo', :onclick => "swapGame(#{g.id});" %>
+      </div>
+    </div>
+
+  <% end %>
+<% end %>
+
+<div class="col l2" id="season-stats" style="margin-top: 20px;">
+  <div class="row center-align">
+    <h6>2017-18<br/>SEASON<br/>STATS</h6>
+  </div>
+</div>

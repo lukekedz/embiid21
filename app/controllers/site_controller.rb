@@ -3,8 +3,9 @@ class SiteController < ApplicationController
 	skip_before_action :verify_authenticity_token, only: :upload_stats
 
   def splash
-    # @last_game   = Stat.last
-    @stats       = Stat.all
+    @next_game = Stat.where(next_game?: true)
+    @games     = Stat.where(id: (@next_game[0].id - 4)..(@next_game[0].id)).order(:id)
+
     @joel_tweets = joel_on_twitter()
     @tweets_joel = twitter_on_joel()
   end
