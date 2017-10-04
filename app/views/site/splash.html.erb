@@ -3,6 +3,7 @@
 <% @games.each do |game| %>
   <% if (game.id + 1) == @next_game[0].id %>
     <div class="row center-align" id="game-<%= game.id %>">
+      <span class="initially-displayed-game" style="display: none;"><%= game.id %></span>
       <%= render 'game_stats', game: game %>
     </div>
   <% else %>

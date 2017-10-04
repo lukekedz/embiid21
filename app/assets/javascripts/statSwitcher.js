@@ -1,11 +1,11 @@
 $(document).ready(function() {
   // TODO: update current to season stats or latest game played
-  var displayedGameId = "#game-5";
-  var displayedLogoId = "#game-load-logo-4";
+  var displayedGameId = "#game-" + $(".initially-displayed-game")[0].innerText;
+  var displayedLogoId = "#game-load-logo-" + $(".initially-displayed-logo")[0].innerText;;
 
   swapGame = function(id) {
     var gameId = "#game-" + id;
-    var logoId = "#game-load-logo-" + (id -1);
+    var logoId = "#game-load-logo-" + id;
 
     // displays stats, video, etc. for selected game
     $(displayedGameId).hide();

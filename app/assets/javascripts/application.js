@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-    setTimeout(function(){
-      $('#processing').fadeOut('slow', function() {});
-    }, 1000);
+  // setTimeout(function(){
+  //   $('#processing').fadeOut('slow', function() {});
+  // }, 1000);
 });

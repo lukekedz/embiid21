@@ -2,6 +2,8 @@
   <% if (g.id + 1) == @next_game[0].id %>
 
     <div class="col l2" id="game-load-logo-<%= g.id %>">
+      <span class="initially-displayed-logo" style="display: none;"><%= g.id %></span>
+
       <div class="row" onclick="swapGame(<%= g.id %>);" id="text" style="display: none;">
         <div class="col l4">
           <h6><%= Date.parse(g.game_date).strftime('%^b') %></h6>
