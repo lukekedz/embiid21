@@ -1,13 +1,14 @@
-<ul style="height: 300px; overflow-y: scroll;">
+<div style="height: 300px; width: 95%; overflow-y: scroll; margin-left: 2.5%;">
 <% @joel_tweets.each do |tweet| %>
-  <li>
-    <%= tweet.created_at.to_s[0..15] %>
-        <%= auto_link('@' + tweet.user.screen_name.to_s, target: '_blank' ).html_safe %>
-      </span>
-    says:
-  </li>
-  <li><%= auto_link(Obscenity.sanitize(tweet.full_text.to_s.dup), target: '_blank').html_safe %></li>
-  <li class="joel-tweets" style="display: none;"><%= tweet.id %></li>
-  <br/>
+    
+    <p style="border: 1px black solid;">
+      <%= tweet.created_at.to_s[0..15] %>
+      <%= auto_link('@' + tweet.user.screen_name.to_s, target: '_blank' ).html_safe %>
+      says:
+      <br/>
+      <%= auto_link(Obscenity.sanitize(tweet.full_text.to_s.dup), target: '_blank').html_safe %>
+    </p>
+    
+    <p class="joel-tweets" style="display: none;"><%= tweet.id %></p>
 <% end %>
-</ul>
+</div>
