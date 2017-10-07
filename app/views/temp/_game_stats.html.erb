@@ -1,22 +1,26 @@
 <div class="col l5 stats">
-  <div class="row" style="border: 1px green solid;"></div>
+  <div class="row"></div>
 
   <div class="row">
-    <div class="col l4 left-align">
-      <h4><%= game.opp.last(3) %></h4>
-      <h6 style="padding-left: 5px; margin-top: -10px;"><%= Date.parse(game.game_date).strftime('%^b %-d') %></h6>
+    <div class="col l4">
+      <strong><%= game.opp.last(3) %></strong>
+      <br/>
+      <%= Date.parse(game.game_date).strftime('%^b') %> 
+      <%= Date.parse(game.game_date).strftime('%-d') %>
     </div>
     <div class="col l4">
-      <h4><%= game.pts %></h4>
-      <h6 style="padding-left: 5px; margin-top: -10px;">POINTS</h6>
+      <%= game.pts %>
+      <br/>
+      POINTS
     </div>
     <div class="col l4">
-      <h4><%= game.min %></h4>
-      <h6 style="padding-left: 5px; margin-top: -10px;">MINUTES</h6>
+      <%= game.min %>
+      <br/>
+      MINUTES
     </div>
   </div>
 
-  <div class="row" style="border: 1px red solid;">
+  <div class="row">
     <div class="col l4">
       <%= game.fg_prct %>
       <br/>
@@ -34,10 +38,10 @@
     </div>
   </div>
 
-  <div class="row" style="border: 1px red solid;">
+  <div class="row">
 
     <div class="col l4">
-      <div class="row" style="border: 1px green solid;">
+      <div class="row">
         <div class="col l6">
           REB
           <br/>
@@ -50,7 +54,7 @@
         </div>
       </div>
 
-      <div class="row" style="border: 1px green solid;">
+      <div class="row">
         <div class="col l6">
           BLK
           <br/>
@@ -65,8 +69,10 @@
     </div>
 
     <div class="col l8">
-      <div class="row" style="border: 1px blue solid;">
-
+      <div class="row">
+        <div class="video-container responsive-video" width="480" height="300">
+          <iframe src="https://giphy.com/embed/<%= game.player_giphy_id %>" frameBorder="0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
 
@@ -74,7 +80,12 @@
 </div>
 
 <div class="col l7 stats">
-  <div class="row" style="border: 1px red solid;">
-
+  <div class="row">
+    <div class="video-container responsive-video highlight-video">
+      <object>
+        <param name="movie" value="http://www.youtube.com/v/<%= game.video_id %>"></param>
+        <embed src="http://www.youtube.com/v/<%= game.video_id %>" type="application/x-shockwave-flash"></embed>
+      </object>
+    </div>
   </div>
 </div>
