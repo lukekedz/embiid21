@@ -1,28 +1,31 @@
 $(document).ready(function() {
-  // TODO: update current to season stats or latest game played
-  var displayedGameId = "#game-" + $(".initially-displayed-game")[0].innerText;
-  var displayedLogoId = "#game-load-logo-" + $(".initially-displayed-logo")[0].innerText;;
+  var initialId        = $(".initially-displayed-game")[0].innerText;
+  var displayedGame    = "#game-" + initialId
+  var displayedNavText = "#nav-text-" + initialId
+  var displayedNavLogo = "#nav-logo-" + initialId
 
   swapGame = function(id) {
     var gameId = "#game-" + id;
-    var logoId = "#game-load-logo-" + id;
+    var textId = "#nav-text-" + id;
+    var logoId = "#nav-logo-" + id;
 
-    // displays stats, video, etc. for selected game
-    $(displayedGameId).hide();
+    // switch the stats, video 
+    $(displayedGame).hide();
     $(gameId).show();
-    displayedGameId = gameId;
+    displayedGame = gameId;
 
-    // animation of team logo schedule nav
-    // flip to hide logo & return to text
-    $(displayedLogoId + " #logo").hide().css('background-color', 'white');
-    $(displayedLogoId + " #text").show();
+    // hide currently-selected logo & display text
+    $(displayedNavLogo).hide();
+    $(displayedNavText).show();
 
-    // flip to display logo
-    $(logoId + " #text").hide();
-    $(logoId + " #logo").show().css('background-color', '#D3D3D3');
+    // flip to selected logo & hide text
+    $(textId).hide();
+    $(logoId).show();
     $(logoId).addClass("animated flipInY");
-    displayedLogoId = logoId;
-    
+
+    displayedNavText = textId;
+    displayedNavLogo = logoId;
+
     setTimeout(function(){
       $(logoId).removeClass("animated flipInY");
     }, 1000);
