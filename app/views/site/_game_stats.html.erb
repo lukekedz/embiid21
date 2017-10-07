@@ -1,72 +1,76 @@
 <div class="col l5 stats">
-  <div class="row" style="border: 1px green solid;"></div>
+  <!-- <div class="row" style="border: 1px green solid;"></div> -->
 
   <div class="row">
-    <div class="col l4 left-align">
+    <div class="col l4">
       <h4><%= game.opp.last(3) %></h4>
-      <h6 style="padding-left: 5px; margin-top: -10px;"><%= Date.parse(game.game_date).strftime('%^b %-d') %></h6>
+      <h6 style="padding-left: 2.5px; margin-top: -10px;"><%= Date.parse(game.game_date).strftime('%^B %-d') %></h6>
     </div>
     <div class="col l4">
       <h4><%= game.pts %></h4>
-      <h6 style="padding-left: 5px; margin-top: -10px;">POINTS</h6>
+      <h6 style="margin-top: -10px;">POINTS</h6>
     </div>
     <div class="col l4">
       <h4><%= game.min %></h4>
-      <h6 style="padding-left: 5px; margin-top: -10px;">MINUTES</h6>
+      <h6 style="margin-top: -10px;">MINUTES</h6>
     </div>
   </div>
 
-  <div class="row" style="border: 1px red solid;">
+  <div class="row">
     <div class="col l4">
-      <%= game.fg_prct %>
-      <br/>
-      FIELD GOAL %
+      <h5><%= game.fg_prct %></h5>
+      <p style="margin-top: -10px; font-size: 12px;">FIELD GOAL %</p>
+      <p style="margin-top: -10px; font-size: 10px;">
+        FGM <%= game.fgm_fga.split('-')[0] %> - FGA <%= game.fgm_fga.split('-')[1] %> 
+      </p>
     </div>
     <div class="col l4">
-      <%= game.ft_prct %>
-      <br/>
-      FREE THROW %
+      <h5><%= game.ft_prct %></h5>
+      <p style="margin-top: -10px; font-size: 12px;">FREE THROW %</p>
+      <p style="margin-top: -10px; font-size: 10px;">
+        FTM <%= game.ftm_fta.split('-')[0] %> - FTA <%= game.ftm_fta.split('-')[1] %> 
+      </p>
     </div>
     <div class="col l4">
-      <%= game.three_prct %>
-      <br/>
-      THREE POINT %
+      <h5><%= game.three_prct %></h5>
+      <p style="margin-top: -10px; font-size: 12px;">THREE POINT %</p>
+      <p style="margin-top: -10px; font-size: 10px;">
+        3PM <%= game.three_m_a.split('-')[0] %> - 3PA <%= game.three_m_a.split('-')[1] %> 
+      </p>
     </div>
   </div>
 
-  <div class="row" style="border: 1px red solid;">
+  <div class="row">
 
     <div class="col l4">
-      <div class="row" style="border: 1px green solid;">
+      <div class="row">
         <div class="col l6">
-          REB
-          <br/>
-          <%= game.reb %>
+          <p style="font-size: 12px;">REB</p>
+          <h5 style="margin-top: -10px;"><%= game.reb %></h5>
         </div>
         <div class="col l6">
-          AST
-          <br/>
-          <%= game.ast %>
+          <p style="font-size: 12px;">AST</p>
+          <h5 style="margin-top: -10px;"><%= game.ast %></h5>
         </div>
       </div>
 
-      <div class="row" style="border: 1px green solid;">
+      <div class="row">
         <div class="col l6">
-          BLK
-          <br/>
-          <%= game.blk %>
+          <p style="font-size: 12px;">BLK</p>
+          <h5 style="margin-top: -10px;"><%= game.blk %></h5>
         </div>
         <div class="col l6">
-          STL
-          <br/>
-          <%= game.stl %>
+          <p style="font-size: 12px;">STL</p>
+          <h5 style="margin-top: -10px;"><%= game.stl %></h5>
         </div>
       </div>
     </div>
 
     <div class="col l8">
-      <div class="row" style="border: 1px blue solid;">
-
+      <div class="row" style="margin-top: 10px;">
+        <div class="video-container responsive-video" width="480" height="300">
+          <iframe src="https://giphy.com/embed/<%= game.player_giphy_id %>" frameBorder="0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
 
@@ -74,7 +78,12 @@
 </div>
 
 <div class="col l7 stats">
-  <div class="row" style="border: 1px red solid;">
-
+  <div class="row" style="margin-top: 25px;">
+    <div class="video-container responsive-video highlight-video">
+      <object>
+        <param name="movie" value="http://www.youtube.com/v/<%= game.video_id %>"></param>
+        <embed src="http://www.youtube.com/v/<%= game.video_id %>" type="application/x-shockwave-flash"></embed>
+      </object>
+    </div>
   </div>
 </div>

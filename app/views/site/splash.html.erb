@@ -1,5 +1,3 @@
-<br/>
-
 <% @games.each do |game| %>
   <% if (game.id + 1) == @next_game[0].id %>
     <div class="row center-align" id="game-<%= game.id %>">
