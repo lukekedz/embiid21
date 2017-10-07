@@ -1,3 +1,9 @@
+<script>
+  $(document).ready(function() {
+    $('#modal1').modal();
+  });
+</script>
+
 <% @games.each do |g| %>
   <% if (g.id + 1) == @next_game[0].id %>
 
@@ -55,8 +61,22 @@
   <% end %>
 <% end %>
 
-<div class="col l2" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
-  <h6>2017-18</h6>
-  <h4>SEASON</h4>
-  <h6>STATS</h6>
+<a class="modal-trigger" href="#modal1">
+  <div class="col l2" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
+    <h6>2017-18</h6>
+    <h4>SEASON</h4>
+    <h6>STATS</h6>
+  </div>
+</a>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Joel Embiid</h4>
+    <p>2017-18 Season Statistics</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">EXIT</a>
+  </div>
 </div>
+          
