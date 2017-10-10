@@ -19,21 +19,21 @@
       <h5><%= game.fg_prct %></h5>
       <p style="margin-top: -10px; font-size: 12px;">FIELD GOAL %</p>
       <p style="margin-top: -10px; font-size: 10px;">
-        FGM <%= game.fgm_fga.split('-')[0] %> - FGA <%= game.fgm_fga.split('-')[1] %> 
+        FGM <%= if game.fgm_fga then game.fgm_fga.split('-')[0] end %> - FGA <%= if game.fgm_fga then game.fgm_fga.split('-')[1] end %> 
       </p>
     </div>
     <div class="col l4">
       <h5><%= game.ft_prct %></h5>
       <p style="margin-top: -10px; font-size: 12px;">FREE THROW %</p>
       <p style="margin-top: -10px; font-size: 10px;">
-        FTM <%= game.ftm_fta.split('-')[0] %> - FTA <%= game.ftm_fta.split('-')[1] %> 
+        FTM <%= if game.ftm_fta then game.ftm_fta.split('-')[0] end %> - FTA <%= if game.ftm_fta then game.ftm_fta.split('-')[1] end %> 
       </p>
     </div>
     <div class="col l4">
       <h5><%= game.three_prct %></h5>
       <p style="margin-top: -10px; font-size: 12px;">THREE POINT %</p>
       <p style="margin-top: -10px; font-size: 10px;">
-        3PM <%= game.three_m_a.split('-')[0] %> - 3PA <%= game.three_m_a.split('-')[1] %> 
+        3PM <%= if game.three_m_a then game.three_m_a.split('-')[0] end %> - 3PA <%= if game.three_m_a then game.three_m_a.split('-')[1] end %> 
       </p>
     </div>
   </div>
