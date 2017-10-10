@@ -1,14 +1,26 @@
-<div style="height: 300px; width: 95%; overflow-y: scroll; margin-left: 2.5%;">
-<% @joel_tweets.each do |tweet| %>
-    
-    <p style="border: 1px black solid;">
-      <%= tweet.created_at.to_s[0..15] %>
-      <%= auto_link('@' + tweet.user.screen_name.to_s, target: '_blank' ).html_safe %>
-      says:
-      <br/>
-      <%= auto_link(Obscenity.sanitize(tweet.full_text.to_s.dup), target: '_blank').html_safe %>
+<div id="jot"></div>
+
+<div id="jot" style="height: 300px; margin-bottom: 10px; overflow-y: scroll; margin-left: 1%; background-color: rgba(255,255,255,0.8)">
+  <% @joel_tweets.each do |tweet| %>
+      
+    <p style="margin-left: 1%;">
+      <span style="font-size: 12px;">
+      
+        <%= tweet.created_at.strftime("%-d %b %Y") %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= tweet.created_at.strftime("%l:%M%p") %>
+      </span>
+
+    <br/>
+
+      <span style="font-size: 16px;">
+        <%= auto_link(Obscenity.sanitize(tweet.full_text.to_s.dup), target: '_blank').html_safe %>
+      </span>
+
     </p>
+
+    <hr width="75%">
     
     <p class="joel-tweets" style="display: none;"><%= tweet.id %></p>
-<% end %>
+  <% end %>
 </div>

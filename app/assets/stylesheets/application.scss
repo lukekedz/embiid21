@@ -1,7 +1,7 @@
 @import "materialize";
 
 html {
-  font-family: Graduate;
+  font-family: 'Nunito', sans-serif;
   background: rgba(255,255,255, 1.0);
 }
 
@@ -52,6 +52,53 @@ body {
 
 .team-logo {
   width: 80%;
+}
+
+#jot {
+  position: relative;
+  z-index: 1;
+}
+
+#jot:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  opacity: 0.2;
+
+  background-image: url("cameroon.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  x: 50% 50%;
+}
+
+
+#toj {
+  position: relative;
+  z-index: 1;
+}
+
+#toj:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  opacity: 0.2;
+
+  background-image: url("franklin.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  x: 50% 50%;
 }
 
 .flag-stripe-w {
