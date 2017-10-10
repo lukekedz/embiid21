@@ -8,7 +8,7 @@
   <% if (g.id + 1) == @next_game[0].id %>
 
     <div 
-      class="col l2"
+      class="col l2 hoverable"
       id="nav-text-<%= g.id %>"
       style="height: 125px; border: 1px rgba(211,211,211,0.8) solid; display: none; "
       onclick="swapGame(<%= g.id %>);"
@@ -19,7 +19,7 @@
     </div>
 
     <div 
-      class="col l2"
+      class="col l2 hoverable"
       id="nav-logo-<%= g.id %>"
       style="height: 125px; background-color: rgba(211,211,211,0.8);"
       onclick="swapGame(<%= g.id %>);"
@@ -31,7 +31,7 @@
   <% elsif g.next_game? == false %>
 
     <div 
-      class="col l2"
+      class="col l2 hoverable"
       id="nav-text-<%= g.id %>"
       style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;"
       onclick="swapGame(<%= g.id %>);"
@@ -42,7 +42,7 @@
     </div>
 
     <div 
-      class="col l2"
+      class="col l2 hoverable"
       id="nav-logo-<%= g.id %>"
       style="display: none; height: 125px; background-color: rgba(211,211,211,0.8);"
       onclick="swapGame(<%= g.id %>);"
@@ -52,7 +52,7 @@
 
   <% else %>
 
-    <div class="col l2" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
+    <div class="col l2 hoverable" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
       <h6>NEXT UP</h6>
       <h4><%= g.opp.last(3) %></h4>
       <h6><%= Date.parse(g.game_date).strftime('%^B %-d') %></h6>
@@ -62,7 +62,7 @@
 <% end %>
 
 <a class="modal-trigger" href="#season-stats">
-  <div class="col l2" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
+  <div class="col l2 hoverable" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
     <h6>2017-18</h6>
     <h4>SEASON</h4>
     <h6>STATS</h6>
