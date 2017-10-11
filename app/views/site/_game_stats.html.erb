@@ -72,11 +72,8 @@
 
 <div class="col l7 s12 youtube">
   <div class="row youtube-row">
-    <div class="video-container responsive-video youtube-video">
-      <object>
-        <param name="movie" value="http://www.youtube.com/v/<%= game.video_id %>"></param>
-        <embed src="http://www.youtube.com/v/<%= game.video_id %>" type="application/x-shockwave-flash"></embed>
-      </object>
-    </div>
+     <div class="video-container youtube-video">
+        <iframe src="//www.youtube.com/embed/<%= game.video_id %>?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
   </div>
 </div>
