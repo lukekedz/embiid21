@@ -1,69 +1,67 @@
-<div class="col l5 stats" style="margin-bottom: -50px;">
-  <div class="row">
-    <div class="col l4">
+<div class="col l5 s12 stats">
+  <div class="row first-row">
+    <div class="col l4 s4">
       <h4><%= game.opp.last(3) %></h4>
-      <h6 style="padding-left: 2.5px; margin-top: -10px;"><%= Date.parse(game.game_date).strftime('%^B %-d') %></h6>
+      <p class="title2"><%= Date.parse(game.game_date).strftime('%^B %-d') %></p>
     </div>
-    <div class="col l4">
+    <div class="col l4 s4">
       <h4><%= game.pts %></h4>
-      <h6 style="margin-top: -10px;">POINTS</h6>
+      <p class="title2">POINTS</p>
     </div>
-    <div class="col l4">
+    <div class="col l4 s4">
       <h4><%= game.min %></h4>
-      <h6 style="margin-top: -10px;">MINUTES</h6>
+      <p class="title2">MINUTES</p>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col l4">
-      <h5><%= game.fg_prct %></h5>
-      <p style="margin-top: -10px; font-size: 12px;">FIELD GOAL %</p>
-      <p style="margin-top: -10px; font-size: 10px;">
-        FGM <%= game.fgm_fga.split('-')[0] %> - FGA <%= game.fgm_fga.split('-')[1] %> 
+  <div class="row second-row">
+    <div class="col l4 s4">
+      <h4><%= game.fg_prct %></h4>
+      <p class="subtitle1">FIELD GOAL %</p>
+      <p class="subtitle2">
+        <%= game.fgm_fga.split('-')[0] %> for <%= game.fgm_fga.split('-')[1] %> 
       </p>
     </div>
-    <div class="col l4">
-      <h5><%= game.ft_prct %></h5>
-      <p style="margin-top: -10px; font-size: 12px;">FREE THROW %</p>
-      <p style="margin-top: -10px; font-size: 10px;">
-        FTM <%= game.ftm_fta.split('-')[0] %> - FTA <%= game.ftm_fta.split('-')[1] %> 
+    <div class="col l4 s4">
+      <h4><%= game.ft_prct %></h4>
+      <p class="subtitle1">FREE THROW %</p>
+      <p class="subtitle2">
+        <%= game.ftm_fta.split('-')[0] %> for <%= game.ftm_fta.split('-')[1] %> 
       </p>
     </div>
-    <div class="col l4">
-      <h5><%= game.three_prct %></h5>
-      <p style="margin-top: -10px; font-size: 12px;">THREE POINT %</p>
-      <p style="margin-top: -10px; font-size: 10px;">
-        3PM <%= game.three_m_a.split('-')[0] %> - 3PA <%= game.three_m_a.split('-')[1] %> 
+    <div class="col l4 s4">
+      <h4><%= game.three_prct %></h4>
+      <p class="subtitle1">THREE POINT %</p>
+      <p class="subtitle2">
+        <%= game.three_m_a.split('-')[0] %> for <%= game.three_m_a.split('-')[1] %> 
       </p>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col l4">
+  <div class="row quad">
+    <div class="col l4 s12">
       <div class="row">
-        <div class="col l6">
-          <p style="font-size: 12px;">REB</p>
-          <h5 style="margin-top: -10px;"><%= game.reb %></h5>
+        <div class="col l6 s3">
+          <p>AST</p>
+          <h5><%= game.ast %></h5>
         </div>
-        <div class="col l6">
-          <p style="font-size: 12px;">AST</p>
-          <h5 style="margin-top: -10px;"><%= game.ast %></h5>
+        <div class="col l6 s3">
+          <p>REB</p>
+          <h5><%= game.reb %></h5>
         </div>
-      </div>
-      <div class="row">
-        <div class="col l6">
-          <p style="font-size: 12px;">BLK</p>
-          <h5 style="margin-top: -10px;"><%= game.blk %></h5>
+        <div class="col l6 s3">
+          <p>STL</p>
+          <h5><%= game.stl %></h5>
         </div>
-        <div class="col l6">
-          <p style="font-size: 12px;">STL</p>
-          <h5 style="margin-top: -10px;"><%= game.stl %></h5>
+        <div class="col l6 s3">
+          <p>BLK</p>
+          <h5><%= game.blk %></h5>
         </div>
       </div>
     </div>
 
-    <div class="col l8">
-      <div class="row" style="margin-top: 10px;">
+    <div class="col l8 s12">
+      <div class="row giphy">
         <div class="video-container responsive-video" width="480" height="300">
           <iframe src="https://giphy.com/embed/<%= game.player_giphy_id %>" frameBorder="0" allowfullscreen></iframe>
         </div>
@@ -72,9 +70,9 @@
   </div>
 </div>
 
-<div class="col l7 stats" style="margin-bottom: -20px;">
-  <div class="row" style="margin-top: 25px;">
-    <div class="video-container responsive-video highlight-video">
+<div class="col l7 s12 youtube">
+  <div class="row youtube-row">
+    <div class="video-container responsive-video youtube-video">
       <object>
         <param name="movie" value="http://www.youtube.com/v/<%= game.video_id %>"></param>
         <embed src="http://www.youtube.com/v/<%= game.video_id %>" type="application/x-shockwave-flash"></embed>
