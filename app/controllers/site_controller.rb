@@ -3,8 +3,15 @@ class SiteController < ApplicationController
 	skip_before_action :verify_authenticity_token, only: :upload_stats
 
   def splash
-    @next_game = Stat.where(next_game?: true)
-    @games     = Stat.where(id: (@next_game[0].id - 4)..(@next_game[0].id)).order(:id)
+    @first_five_games_next = Stat.order(:id).first(5).each.map { |g| g.next_game? }
+
+    if @first_five_games_next.count(true) >= 2 
+      @next_game = Stat.order(:id).where(next_game?: true).first
+      @games = Stat.first(5)
+    else
+      @next_game = Stat.order(:id).where(next_game?: true).first
+      @games = Stat.where(id: (@next_game.id - 4)..(@next_game.id)).order(:id)
+    end
 
     @joel_tweets = joel_on_twitter()
     @tweets_joel = twitter_on_joel()

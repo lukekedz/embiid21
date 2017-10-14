@@ -1,5 +1,5 @@
 <% @games.each do |game| %>
-  <% if (game.id + 1) == @next_game[0].id %>
+  <% if game.id == ( @next_game.id - 1 )%>
     <div class="row center-align" id="game-<%= game.id %>">
       <span class="initially-displayed-game" style="display: none;"><%= game.id %></span>
       <%= render 'game_stats', game: game %>

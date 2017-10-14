@@ -21,7 +21,8 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
 </head>
 <body>
-<div id="processing">
+
+<!--   <div id="processing">
     <div id="inner">
       <h1>PROCESSING...</h1>
       <br/>
@@ -29,11 +30,28 @@
       <br/>
       <h3>www.EmbiidFeed.com</h3>
     </div>
+  </div> -->
+
+  <div class="navbar-fixed">
+    <nav style="background-color: #C40000;">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">EmbiidFeed</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="">GAMES</a></li>
+          <li><a href="">JOEL SAYS</a></li>
+          <li><a href="">SIXERS' NATION</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
 
-  <div class="container">
-  	<%= yield %>
+  <div class="embiid-full-bkgrnd">
+
+    <div class="container">
+    	<%= yield %>
+    </div>
+
   </div>
-  
+
 </body>
 </html>

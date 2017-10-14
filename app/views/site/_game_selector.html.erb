@@ -5,7 +5,7 @@
 </script>
 
 <% @games.each do |g| %>
-  <% if (g.id + 1) == @next_game[0].id %>
+  <% if (g.id + 1) == @next_game.id %>
 
     <div 
       class="col l2 hoverable"
@@ -52,7 +52,7 @@
 
   <% else %>
 
-    <div class="col l2 hoverable" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
+    <div class="col l2" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
       <h6>NEXT UP</h6>
       <h4><%= g.opp.last(3) %></h4>
       <h6><%= Date.parse(g.game_date).strftime('%^B %-d') %></h6>
