@@ -62,9 +62,22 @@
 
     <div class="col l8 s12">
       <div class="row giphy">
-        <div class="video-container responsive-video" width="480" height="300">
-          <iframe src="https://giphy.com/embed/<%= if game.player_giphy_id then game.player_giphy_id end %>" frameBorder="0" allowfullscreen></iframe>
-        </div>
+        <% if game.player_giphy_id %>
+          <div class="video-container responsive-video" width="480" height="300">
+            <iframe src="https://giphy.com/embed/<%= if game.player_giphy_id then game.player_giphy_id end %>" frameBorder="0" allowfullscreen></iframe>
+          </div>
+        <% else %>
+          <div class="col l12 s12">
+            <div class="card horizontal">
+              <div class="card-image">
+                <%= image_tag 'giphy.png', :class => 'responsive-img giphy-placeholder' %>
+              </div>
+              <div class="card-content valign-wrapper">
+                <p>... in editing!</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -72,8 +85,21 @@
 
 <div class="col l7 s12 youtube">
   <div class="row youtube-row">
-     <div class="video-container youtube-video">
+    <% if game.video_id %>
+      <div class="video-container youtube-video">
         <iframe src="//www.youtube.com/embed/<%= if game.video_id then game.video_id end %>?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
+    <% else %>
+      <div class="col l12 s12">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag 'youtube.jpg', :class => 'responsive-img youtube-placeholder' %>
+          </div>
+          <div class="card-content">
+            <h5>Highlight video in editing room... <span id="in-editing">Trust the Process.</span></h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

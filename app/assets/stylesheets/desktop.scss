@@ -72,6 +72,11 @@
       .giphy {
         margin-top: 10px;
       }
+
+      .giphy-placeholder {
+        height: 170px;
+        width: 120px;
+      }
     }
   }
 
@@ -87,6 +92,15 @@
       margin-top: 10px;
       margin-right: 10px;
       margin-bottom: 8px;
+    }
+
+    .youtube-placeholder {
+      height: 300px;
+    }
+
+    #in-editing {
+      font-weight: 700;
+      color: blue;
     }
   }
 
