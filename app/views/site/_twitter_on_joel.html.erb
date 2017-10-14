@@ -1,36 +1,20 @@
-<div id="toj"></div>
-
-<div id="toj" style="height: 300px; margin-bottom: 10px;  overflow-y: scroll; background-color: rgba(255,255,255,1.0);">
+<div id="toj">
   <% @tweets_joel.each do |tweet| %>
-    <div style="margin-bottom: -15px;">
-
-      <img 
-        class="responsive-img circle valign-wrapper" 
-        src="https://twitter.com/<%= tweet.user.screen_name.to_s %>/profile_image?size=normal"
-        style="display: inline-block; margin-left: 2.5%; margin-top: 1%;"
+    <div class="card-panel" id="toj-card">
+      <img class="responsive-img circle valign-wrapper" 
+        src="https://avatars.io/twitter/<%= tweet.user.screen_name.to_s %>"
       >
-
-      <p 
-        style="display: inline-block; margin-left: 1%; position: relative; bottom: 15px;"
-      >
-
-        <span style="font-size: 12px;">
-          <%= tweet.created_at.strftime("%-d %b %Y %l:%M%p") %>
-          <%= auto_link('@' + tweet.user.screen_name.to_s, target: '_blank' ).html_safe %>
-          says:
-        </span>
-
+      <p class="date-and-handle">
+        <%= tweet.created_at.strftime("%-d %b %Y %l:%M%p") %>
+        <%= auto_link('@' + tweet.user.screen_name.to_s, target: '_blank' ).html_safe %>
+        says:
       </p>
 
-      <p 
-        style="font-size: 14px; margin-left: 1.5%; position: relative; bottom: 30px;"
-      >
+      <p class="toj-tweet">
         <%= auto_link(Obscenity.sanitize(tweet.full_text.to_s.dup), target: '_blank').html_safe %>
       </p>
-
-      <p class="tweets-on-joel" style="display: none;"><%= tweet.id %></p>
     </div>
+
+    <p class="tweets-on-joel" style="display: none;"><%= tweet.id %></p>
   <% end %>
 </div>
-
-

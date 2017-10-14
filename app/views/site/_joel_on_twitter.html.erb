@@ -1,26 +1,21 @@
-<div id="jot"></div>
-
-<div id="jot" style="height: 300px; margin-bottom: 10px; overflow-y: scroll; margin-left: 1%; background-color: rgba(255,255,255,0.8)">
+<div id="jot">
   <% @joel_tweets.each do |tweet| %>
-      
-    <p style="margin-left: 1%;">
+    <div class="card-panel" id="jot-card">
+
       <span style="font-size: 12px;">
-      
         <%= tweet.created_at.strftime("%-d %b %Y") %>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <%= tweet.created_at.strftime("%l:%M%p") %>
       </span>
 
-    <br/>
+      <br/>
 
-      <span style="font-size: 16px;">
+      <span style="font-size: 16px; font-weight: 700;">
         <%= auto_link(Obscenity.sanitize(tweet.full_text.to_s.dup), target: '_blank').html_safe %>
       </span>
 
-    </p>
+    </div>
 
-    <hr width="75%">
-    
     <p class="joel-tweets" style="display: none;"><%= tweet.id %></p>
   <% end %>
 </div>

@@ -135,49 +135,86 @@
     height: 125px;
   }
 
-  #jot {
-    position: relative;
-    z-index: 1;
+  .tweet-container {
+    background-color: white;
+
+    #jot-h5-joel {
+      font-weight: 700;
+      margin-left: 1%;
+    }
+
+    #toj-h5-nation {
+      font-weight: 700;
+    }
   }
 
-  #jot:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    opacity: 0.2;
+  #jot {
+    height: 350px;
+    margin-bottom: 10px;
+    margin-left: 1%;
+    overflow-y: scroll;
 
     background-image: url("cameroon.png");
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-repeat: repeat-y;
     background-size: cover;
-    x: 50% 50%;
+  }
+
+  #jot-card {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+
+    opacity: 0.8;
   }
 
   #toj {
-    position: relative;
-    z-index: 1;
-  }
-
-  #toj:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    opacity: 0.2;
+    height: 350px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
 
     background-image: url("franklin.png");
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-repeat: repeat-y;
     background-size: cover;
-    x: 50% 50%;
+  }
+
+  #toj-card {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+
+    opacity: 0.9;
+
+    img {
+      display: inline-block;
+      margin-left: 2.5%; 
+      height: 50px;
+      width: 50px;
+    }
+
+    span {
+      font-weight: 700;
+    }
+
+    .date-and-handle {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      position: relative;
+      bottom: 17.5px;
+      margin-left: 1%;
+    }
+
+    .toj-tweet {
+      font-size: 16px;
+      font-weight: 700;
+      position: relative;
+      margin-left: 1.5%;
+      margin-bottom: -10px;
+      margin-top: -5px;
+    }
   }
 }
