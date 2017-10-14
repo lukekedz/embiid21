@@ -17,11 +17,6 @@ class SiteController < ApplicationController
     @tweets_joel = twitter_on_joel()
   end
 
-  # def carousel
-  #   @games  = Stat.last(5)
-  # 	@tweets = twitter_feed()
-  # end
-
   ### RASPI
   ### TODO: make raspberry pi class
   def last_stat_record
