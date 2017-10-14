@@ -5,35 +5,35 @@
       <p class="title2"><%= Date.parse(game.game_date).strftime('%^B %-d') %></p>
     </div>
     <div class="col l4 s4">
-      <h4><%= game.pts %></h4>
+      <h4><%= if game.pts then game.pts end  %></h4>
       <p class="title2">POINTS</p>
     </div>
     <div class="col l4 s4">
-      <h4><%= game.min %></h4>
+      <h4><%= if game.min then game.min end %></h4>
       <p class="title2">MINUTES</p>
     </div>
   </div>
 
   <div class="row second-row">
     <div class="col l4 s4">
-      <h4><%= game.fg_prct %></h4>
+      <h4><%= if game.fg_prct then game.fg_prct end %></h4>
       <p class="subtitle1">FIELD GOAL %</p>
       <p class="subtitle2">
-        <%= game.fgm_fga.split('-')[0] %> for <%= game.fgm_fga.split('-')[1] %> 
+        <%= if game.fgm_fga then game.fgm_fga.to_s.split('-')[0] end %> for <%= if game.fgm_fga then game.fgm_fga.to_s.split('-')[1] end %> 
       </p>
     </div>
     <div class="col l4 s4">
-      <h4><%= game.ft_prct %></h4>
+      <h4><%= if game.ft_prct then game.ft_prct end %></h4>
       <p class="subtitle1">FREE THROW %</p>
       <p class="subtitle2">
-        <%= game.ftm_fta.split('-')[0] %> for <%= game.ftm_fta.split('-')[1] %> 
+        <%= if game.ftm_fta then game.ftm_fta.to_s.split('-')[0] end %> for <%= if game.ftm_fta then game.ftm_fta.to_s.split('-')[1] end %> 
       </p>
     </div>
     <div class="col l4 s4">
-      <h4><%= game.three_prct %></h4>
+      <h4><%= if game.three_prct then game.three_prct end %></h4>
       <p class="subtitle1">THREE POINT %</p>
       <p class="subtitle2">
-        <%= game.three_m_a.split('-')[0] %> for <%= game.three_m_a.split('-')[1] %> 
+        <%= if game.three_m_a then game.three_m_a.to_s.split('-')[0] end %> for <%= if game.three_m_a then game.three_m_a.to_s.split('-')[1] end %> 
       </p>
     </div>
   </div>
@@ -43,19 +43,19 @@
       <div class="row">
         <div class="col l6 s3">
           <p>AST</p>
-          <h5><%= game.ast %></h5>
+          <h5><%= if game.ast then game.ast end %></h5>
         </div>
         <div class="col l6 s3">
           <p>REB</p>
-          <h5><%= game.reb %></h5>
+          <h5><%= if game.reb then game.reb end %></h5>
         </div>
         <div class="col l6 s3">
           <p>STL</p>
-          <h5><%= game.stl %></h5>
+          <h5><%= if game.stl then game.stl end %></h5>
         </div>
         <div class="col l6 s3">
           <p>BLK</p>
-          <h5><%= game.blk %></h5>
+          <h5><%= if game.blk then game.blk end %></h5>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
     <div class="col l8 s12">
       <div class="row giphy">
         <div class="video-container responsive-video" width="480" height="300">
-          <iframe src="https://giphy.com/embed/<%= game.player_giphy_id %>" frameBorder="0" allowfullscreen></iframe>
+          <iframe src="https://giphy.com/embed/<%= if game.player_giphy_id then game.player_giphy_id end %>" frameBorder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@
 <div class="col l7 s12 youtube">
   <div class="row youtube-row">
      <div class="video-container youtube-video">
-        <iframe src="//www.youtube.com/embed/<%= game.video_id %>?rel=0" frameborder="0" allowfullscreen></iframe>
+        <iframe src="//www.youtube.com/embed/<%= if game.video_id then game.video_id end %>?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
   </div>
 </div>

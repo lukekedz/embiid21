@@ -5,7 +5,7 @@
 </script>
 
 <% @games.each do |g| %>
-  <% if (g.id + 1) == @next_game[0].id %>
+  <% if (g.id + 1) == @next_game.id %>
 
     <div 
       class="col l2 hoverable"
