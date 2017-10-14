@@ -8,20 +8,19 @@
   <% if (g.id + 1) == @next_game.id %>
 
     <div 
-      class="col l2 hoverable"
+      class="col l2 s4 hoverable text-in-nav"
       id="nav-text-<%= g.id %>"
-      style="height: 125px; border: 1px rgba(211,211,211,0.8) solid; display: none; "
+      style="display: none;"
       onclick="swapGame(<%= g.id %>);"
     >
       <h6><%= g.score %></h6>
-      <h4><%= g.opp.last(3) %></h4>
+      <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp.last(3) %></h4>
       <h6><%= Date.parse(g.game_date).strftime('%^B %-d') %></h6>
     </div>
 
     <div 
-      class="col l2 hoverable"
+      class="col l2 s4 hoverable logo-in-nav"
       id="nav-logo-<%= g.id %>"
-      style="height: 125px; background-color: rgba(211,211,211,0.8);"
       onclick="swapGame(<%= g.id %>);"
     >
       <span class="initially-loaded-game" style="display: none;"><%= g.id %></span>
@@ -31,20 +30,19 @@
   <% elsif g.next_game? == false %>
 
     <div 
-      class="col l2 hoverable"
+      class="col l2 s4 hoverable text-in-nav"
       id="nav-text-<%= g.id %>"
-      style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;"
       onclick="swapGame(<%= g.id %>);"
     >
       <h6><%= g.score %></h6>
-      <h4><%= g.opp.last(3) %></h4>
+      <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp.last(3) %></h4>
       <h6><%= Date.parse(g.game_date).strftime('%^B %-d') %></h6>
     </div>
 
     <div 
-      class="col l2 hoverable"
+      class="col l2 s4 hoverable logo-in-nav"
       id="nav-logo-<%= g.id %>"
-      style="display: none; height: 125px; background-color: rgba(211,211,211,0.8);"
+      style="display: none;"
       onclick="swapGame(<%= g.id %>);"
     >
       <%= image_tag g.opp.last(3) + '.png', :class => 'responsive-img team-logo' %>
@@ -52,9 +50,9 @@
 
   <% else %>
 
-    <div class="col l2" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
+    <div class="col l2 s4 next-nav">
       <h6>NEXT UP</h6>
-      <h4><%= g.opp.last(3) %></h4>
+      <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp.last(3) %></h4>
       <h6><%= Date.parse(g.game_date).strftime('%^B %-d') %></h6>
     </div>
 
@@ -62,7 +60,7 @@
 <% end %>
 
 <a class="modal-trigger" href="#season-stats">
-  <div class="col l2 hoverable" style="height: 125px; border: 1px rgba(211,211,211,0.8) solid;">
+  <div class="col l2 s4 hoverable" id="season-stats-nav-selector">
     <h6>2017-18</h6>
     <h4>SEASON</h4>
     <h6>STATS</h6>
