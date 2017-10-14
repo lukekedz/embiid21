@@ -5,7 +5,7 @@
         src="https://avatars.io/twitter/<%= tweet.user.screen_name.to_s %>"
       >
       <p class="date-and-handle">
-        <%= tweet.created_at.strftime("%-d %b %Y %l:%M%p") %>
+        <%= (tweet.created_at - ( 4 * 60 * 60 )).strftime("%-d %b %Y %l:%M%p") %>
         <%= auto_link('@' + tweet.user.screen_name.to_s, target: '_blank' ).html_safe %>
         says:
       </p>
