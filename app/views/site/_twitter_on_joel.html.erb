@@ -14,7 +14,5 @@
         <%= auto_link(Obscenity.sanitize(tweet.full_text.to_s.dup), target: '_blank').html_safe %>
       </p>
     </div>
-
-    <p class="tweets-on-joel" style="display: none;"><%= tweet.id %></p>
   <% end %>
 </div>

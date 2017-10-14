@@ -61,22 +61,20 @@ class SiteController < ApplicationController
   end
 
   def joel_on_twitter
-  	twitter_initialize().user_timeline('joelembiid', count: 20)
+  	twitter_initialize.user_timeline('joelembiid', count: 20)
+  end
+
+  def refresh_joel_on_twitter
+    @joel_tweets = twitter_initialize.user_timeline('joelembiid', count: 20)
+    render :partial => 'joel_on_twitter'
   end
 
   def twitter_on_joel
-    twitter_initialize().search('to:joelembiid', result_type: 'recent').take(20)    
+    twitter_initialize.search('to:joelembiid', result_type: 'recent').take(20)    
   end
 
-  def refresh_twitter
-    @tweets_joel = twitter_initialize().search('to:joelembiid', result_type: 'recent').take(20)
-
-    # @tweets_joel.each_with_index do |t, index|
-    #   puts 'DISPLAYED TWEET ID: ' + params[:tweets_on_joel][index]
-    #   puts 'UPDATED TWEET ID:   ' + t.id.to_s
-    #   puts
-    # end
-
+  def refresh_twitter_on_joel
+    @tweets_joel = twitter_initialize.search('to:joelembiid', result_type: 'recent').take(20)
     render :partial => 'twitter_on_joel'
   end
 
