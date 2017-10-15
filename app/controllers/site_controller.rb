@@ -73,6 +73,10 @@ class SiteController < ApplicationController
     render :partial => 'twitter_on_joel'
   end
 
+  def instagram
+    # <a href="" class="insta-btn">flip to 'GRAMS</a>
+  end
+
   private
 
   def ip_authorized?
