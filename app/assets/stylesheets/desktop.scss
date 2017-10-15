@@ -19,6 +19,10 @@
 }
 
 @media screen and (min-width: 993px) {
+
+  .mobile-header-anchors {
+    display: none;
+  }
   
   #processing {
     background-color: white;

@@ -29,6 +29,8 @@ $(document).ready(function() {
     setTimeout(function(){
       $(logoId).removeClass("animated flipInY");
     }, 1000);
-  };
 
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  };
 });

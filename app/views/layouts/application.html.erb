@@ -35,17 +35,33 @@
   <div class="navbar-fixed">
     <nav style="background-color: #C40000;">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo center"><%= image_tag 'script_title.svg', :class => 'script-title' %></a>
+        <a href="/" class="brand-logo center"><%= image_tag 'script_title.svg', :class => 'script-title' %></a>
       </div>
     </nav>
   </div>
 
-  <div class="embiid-full-bkgrnd">
+  <div class="row center-align mobile-header-anchors">
+    <div class="col s4 hoverable">
+      <%= image_tag 'embiid_head.png', :class => 'responsive-img logos', :onclick => 'clickToScroll("games");' %>
+      <br>
+      GAMES
+    </div>
+    <div class="col s4 hoverable">
+      <%= image_tag 'embiid_head.png', :class => 'responsive-img logos', :onclick => 'clickToScroll("joel");' %>
+      <br>
+      JOEL SAYS
+    </div>
+    <div class="col s4 hoverable">
+      <%= image_tag 'embiid_head.png', :class => 'responsive-img logos', :onclick => 'clickToScroll("nation");' %>
+      <br>
+      NATION SAYS
+    </div>
+  </div>
 
+  <div class="embiid-full-bkgrnd">
     <div class="container">
     	<%= yield %>
     </div>
-
   </div>
 
 </body>

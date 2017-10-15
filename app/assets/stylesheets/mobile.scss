@@ -5,6 +5,15 @@
     height: 60px;
   }
 
+  .mobile-header-anchors {
+    padding: 5px;
+
+    .logos {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
   .embiid-full-bkgrnd {
     background-image: url("embiid_full.svg");
     background-repeat: no-repeat;
@@ -95,6 +104,13 @@
       color: blue;
       font-weight: 700;
     }
+  }
+
+  #anchor-span-nav, #anchor-span-joel, #anchor-span-nation {
+    display: block;
+    height: 60px;
+    margin-top: -60px; 
+    visibility: hidden;
   }
 
   #game-selector-nav {

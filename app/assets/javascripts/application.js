@@ -19,4 +19,24 @@ $(document).ready(function() {
   setTimeout(function(){
     $('#processing').fadeOut('slow', function() {});
   }, 1000);
+
+  clickToScroll = function(section) { 
+    switch(section) {
+      case "games":
+        $("html, body").animate({ 
+           scrollTop: $("#anchor-span-nav").offset().top 
+        }, 600);
+        return false;
+      case "joel":
+        $("html, body").animate({ 
+          scrollTop: $("#anchor-span-joel").offset().top 
+        }, 600);
+        return false;
+      case "nation":
+        $("html, body").animate({ 
+          scrollTop: $("#anchor-span-nation").offset().top 
+        }, 600);
+        return false;
+    }
+  };
 });
