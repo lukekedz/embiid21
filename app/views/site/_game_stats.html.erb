@@ -40,7 +40,7 @@
 
   <div class="row quad">
     <div class="col l4 s12">
-      <div class="row">
+      <div class="row quad-stats">
         <div class="col l6 s3">
           <p>AST</p>
           <h5><%= if game.ast then game.ast end %></h5>
@@ -63,7 +63,7 @@
     <div class="col l8 s12">
       <div class="row giphy">
         <% if game.player_giphy_id %>
-          <div class="video-container responsive-video" width="480" height="300">
+          <div class="video-container responsive-video" width="480" height="360">
             <iframe src="https://giphy.com/embed/<%= if game.player_giphy_id then game.player_giphy_id end %>" frameBorder="0" allowfullscreen></iframe>
           </div>
         <% else %>

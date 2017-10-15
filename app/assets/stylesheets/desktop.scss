@@ -1,4 +1,24 @@
-@media screen and (min-width: 990px) {
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    position: relative;
+    width: 80%;
+    left: 5%;
+    top: -20px;
+  }
+}
+
+@media screen and (min-width: 993px) {
   
   #processing {
     background-color: white;
@@ -24,19 +44,20 @@
     background-image: url("embiid_full.svg");
     background-repeat: no-repeat;
     margin-top: 1%;
-  }
 
-  .container {
-    position: relative;
-    top: -20px;
+    .container {
+      position: relative;
+      width: 80%;
+      left: 5%;
+      top: -20px;
 
-    margin: 0 auto;
-    padding-left: 12.5px;
-    padding-right: 12.5px;
-    max-width: 1280px;
-    width: 75%;
+      margin: 0 auto;
+      padding-left: 12.5px;
+      padding-right: 12.5px;
+      max-width: 1280px;
 
-    background: rgba(211,211,211,0.8);
+      background: rgba(211,211,211,0.8);
+    }
   }
 
   .stats {
@@ -52,6 +73,8 @@
     }
 
     .second-row {
+      margin-top: -25px;
+
       .subtitle1 {
         font-size: 16px;
         margin-top: -8px;
@@ -66,6 +89,10 @@
 
     .quad {
       margin-top: -15px;
+
+      .quad-stats {
+        margin-top: -15px;
+      }
 
       p {
         font-size: 22px;
@@ -87,7 +114,6 @@
   }
 
   .youtube {
-    margin-bottom: -20px;
 
     .youtube-row {
       margin-top: 50px;
