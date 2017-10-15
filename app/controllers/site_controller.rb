@@ -15,6 +15,7 @@ class SiteController < ApplicationController
 
     @joel_tweets = joel_on_twitter()
     @tweets_joel = twitter_on_joel()
+    @season      = Season.find(1)
   end
 
   ### RASPI

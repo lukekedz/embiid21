@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004210305) do
+ActiveRecord::Schema.define(version: 20171015185134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "seasons", force: :cascade do |t|
+    t.string   "year",       null: false
+    t.string   "gp",         null: false
+    t.string   "mins",       null: false
+    t.string   "pts",        null: false
+    t.string   "fgm_fga",    null: false
+    t.string   "fg_prct",    null: false
+    t.string   "three_m_a",  null: false
+    t.string   "three_prct", null: false
+    t.string   "ftm_fta",    null: false
+    t.string   "ft_prct",    null: false
+    t.string   "reb",        null: false
+    t.string   "ast",        null: false
+    t.string   "blk",        null: false
+    t.string   "stl",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "stats", force: :cascade do |t|
     t.string   "game_date",       null: false
