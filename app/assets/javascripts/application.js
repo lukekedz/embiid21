@@ -18,7 +18,7 @@
 $(document).ready(function() {
   setTimeout(function(){
     $('#processing').fadeOut('slow', function() {});
-  }, 1000);
+  }, 1500);
 
   clickToScroll = function(section) { 
     switch(section) {
