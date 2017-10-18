@@ -21,14 +21,19 @@ class SiteController < ApplicationController
   ### RASPI
   ### TODO: make raspberry pi class
   def last_stat_record
+    # Stat.find(game date) # (runs in the morning... use yesterday's date)
+    # in scrape, verify the date matches
   	last_stat_record = Stat.last
   	render json: last_stat_record.to_json, :status => 200
   end
 
   def upload_stats
+    # verify the date match! (see last_stat_record() above)
+    # record = Stat.find_by(game_date)
+    # record.update
   	record = Stat.create(
-  		game_date:  params['site']['GAME_DATE'],
-  		opp:        params['site']['OPP'],
+  		# game_date:  params['site']['GAME_DATE'],
+  		# opp:        params['site']['OPP'],
   		score:      params['site']['SCORE'],
   		min:        params['site']['MIN'],
   		fgm_fga:    params['site']['FGM_FGA'],
@@ -45,6 +50,7 @@ class SiteController < ApplicationController
   	)
 
   	render :nothing => true, :status => 200
+    # TODO: error msg / code
   end
 
   def twitter_initialize
