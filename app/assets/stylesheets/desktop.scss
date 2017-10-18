@@ -35,8 +35,26 @@
     text-align: center;
 
     #inner {
-      margin-top: 10%;
+      margin-top: 5%;
     }
+
+    .opening-franklin {
+      padding-top: 1%;
+      padding-bottom: 1%;
+    }
+  }
+
+  .script-title-intro {
+    width: 400px;
+    height: 180px;
+  }
+
+  .script-title-2-intro {
+    background-color: #274ECA;
+    color: white;
+    width: 100%;
+    height: 180px;
+    padding-top: 1.5%;
   }
 
   .script-title {
