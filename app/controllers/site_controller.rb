@@ -87,7 +87,8 @@ class SiteController < ApplicationController
   private
 
   def ip_authorized?
-    unless ENV['RASPI'] == request.remote_ip && ENV['SECRET'] == params[:secret]
+    # unless ENV['RASPI'] == request.remote_ip && ENV['SECRET'] == params[:secret]
+    unless ENV['SECRET'] == params[:secret]
 
       puts "******************************"
       puts request
