@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
-  before_action :ip_authorized?, only: [:last_stat_record, :upload_stats]
-	skip_before_action :verify_authenticity_token, only: :upload_stats
+  before_action :ip_authorized?, only: [:last_stat_record, :upload_stats, :upload_averages]
+	skip_before_action :verify_authenticity_token, only: :upload_stats, :upload_averages
 
   def splash
     @first_five_games_next = Stat.order(:id).first(5).each.map { |g| g.next_game? }
@@ -56,6 +56,28 @@ class SiteController < ApplicationController
 
   	render :nothing => true, :status => 200
     # TODO: error msg / code
+  end
+
+  def upload_averages
+    season = Season.find(1)
+
+    season.update(
+      gp:         params['site']['GP'],
+      mins:       params['site']['MIN'],   
+      pts:        params['site']['PTS'],
+      fgm_fga:    params['site']['FGM_FGA'],    
+      fg_prct:    params['site']['FG_PRCT'],    
+      three_m_a:  params['site']['THREE_M_A'],
+      three_prct: params['site']['THREE_PRCT'],  
+      ftm_fta:    params['site']['FTM_FTA'],     
+      ft_prct:    params['site']['FT_PRCT'],     
+      reb:        params['site']['REB'],        
+      ast:        params['site']['AST'],        
+      blk:        params['site']['BLK'],         
+      stl:        params['site']['STL'], 
+    )
+    
+    render :nothing => true, :status => 200
   end
 
   def twitter_initialize

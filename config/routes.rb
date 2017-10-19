@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # rapsi
   get  'site/last_stat_record'
   post 'site/upload_stats'
+  post 'site/upload_averages'
 end
