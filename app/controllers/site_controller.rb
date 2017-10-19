@@ -21,9 +21,7 @@ class SiteController < ApplicationController
   ### RASPI
   ### TODO: make raspberry pi class
   def last_stat_record
-    # Stat.find(game date) # (runs in the morning... use yesterday's date)
-    # in scrape, verify the date matches
-  	last_stat_record = Stat.last
+  	last_stat_record = Stat.find_by(game_date: (Time.now - (3600 * 24)).strftime("%a %-m/%-d"))
   	render json: last_stat_record.to_json, :status => 200
   end
 
@@ -31,7 +29,10 @@ class SiteController < ApplicationController
     # verify the date match! (see last_stat_record() above)
     # record = Stat.find_by(game_date)
     # record.update
-  	record = Stat.create(
+
+    record = Stat.find_by(game_date: (Time.now - (3600 * 24)).strftime("%a %-m/%-d"))
+
+  	record.update(
   		# game_date:  params['site']['GAME_DATE'],
   		# opp:        params['site']['OPP'],
   		score:      params['site']['SCORE'],
@@ -46,8 +47,12 @@ class SiteController < ApplicationController
   		ast:        params['site']['AST'],
   		blk:        params['site']['BLK'],
   		stl:        params['site']['STL'],
-  		pts:        params['site']['PTS']
+  		pts:        params['site']['PTS'],
+      next_game?: false
   	)
+
+    next_game = Stat.find(rec.id + 1)
+    next_game.update(next_game?: true)
 
   	render :nothing => true, :status => 200
     # TODO: error msg / code
