@@ -62,19 +62,19 @@ class SiteController < ApplicationController
     season = Season.find(1)
 
     season.update(
-      gp:         params['GP'],
-      mins:       params['MIN'],   
-      pts:        params['PTS'],
-      fgm_fga:    params['FGM_FGA'],    
-      fg_prct:    params['FG_PRCT'],    
-      three_m_a:  params['THREE_M_A'],
-      three_prct: params['THREE_PRCT'],  
-      ftm_fta:    params['FTM_FTA'],     
-      ft_prct:    params['FT_PRCT'],     
-      reb:        params['REB'],        
-      ast:        params['AST'],        
-      blk:        params['BLK'],         
-      stl:        params['STL'], 
+      gp:         params['site']['GP'],
+      mins:       params['site']['MIN'],   
+      pts:        params['site']['PTS'],
+      fgm_fga:    params['site']['FGM_FGA'],    
+      fg_prct:    params['site']['FG_PRCT'],    
+      three_m_a:  params['site']['THREE_M_A'],
+      three_prct: params['site']['THREE_PRCT'],  
+      ftm_fta:    params['site']['FTM_FTA'],     
+      ft_prct:    params['site']['FT_PRCT'],     
+      reb:        params['site']['REB'],        
+      ast:        params['site']['AST'],        
+      blk:        params['site']['BLK'],         
+      stl:        params['site']['STL'], 
     )
     
     render :nothing => true, :status => 200
