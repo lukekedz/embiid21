@@ -21,7 +21,7 @@ class SiteController < ApplicationController
   ### RASPI
   ### TODO: make raspberry pi class
   def last_stat_record
-  	last_stat_record = Stat.find_by(game_date: (Time.now - (3600 * 24)).strftime("%a %-m/%-d"))
+  	last_stat_record = Stat.find_by(game_date: (Time.now - (3600 * 48)).strftime("%a %-m/%-d"))
   	render json: last_stat_record.to_json, :status => 200
   end
 
@@ -30,7 +30,7 @@ class SiteController < ApplicationController
     # record = Stat.find_by(game_date)
     # record.update
 
-    record = Stat.find_by(game_date: (Time.now - (3600 * 24)).strftime("%a %-m/%-d"))
+    record = Stat.find_by(game_date: (Time.now - (3600 * 48)).strftime("%a %-m/%-d"))
 
   	record.update(
   		# game_date:  params['site']['GAME_DATE'],
