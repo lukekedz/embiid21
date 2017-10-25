@@ -30,7 +30,7 @@
       </p>
     </div>
     <div class="col l4 s4">
-      <h4><%= if game.three_prct then if (game.three_prct * 100).round(2) == 100.0 ? 100 : (game.fg_prct * 100).round(2) end %></h4>
+      <h4><%= if game.three_prct then (game.three_prct * 100).round(2) == 100.0 ? 100 : (game.fg_prct * 100).round(2) end %></h4>
       <p class="subtitle1">THREE POINT %</p>
       <p class="subtitle2">
         <%= if game.three_m_a then game.three_m_a.to_s.split('-')[0] end %> for <%= if game.three_m_a then game.three_m_a.to_s.split('-')[1] end %> 
