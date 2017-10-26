@@ -51,7 +51,7 @@ class SiteController < ApplicationController
       next_game?: false
   	)
 
-    next_game = Stat.find(rec.id + 1)
+    next_game = Stat.find(record.id + 1)
     next_game.update(next_game?: true)
 
   	render :nothing => true, :status => 200
