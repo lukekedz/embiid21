@@ -16,10 +16,6 @@
 //= require_tree .
 
 $(document).ready(function() {
-  setTimeout(function(){
-    $('#processing').fadeOut('slow', function() {});
-  }, 1250);
-
   clickToScroll = function(section) { 
     switch(section) {
       case "games":
