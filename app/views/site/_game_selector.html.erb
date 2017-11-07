@@ -14,6 +14,7 @@
       onclick="swapGame(<%= g.id %>);"
     >
       <h6><%= g.score %></h6>
+      <!-- TODO: not elegant; make DRY -->
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
         <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[-2..-1] %></h4>
       <% elsif g.opp[-4..-1] == 'UTAH' %>
@@ -30,13 +31,14 @@
       onclick="swapGame(<%= g.id %>);"
     >
       <span class="initially-loaded-game" style="display: none;"><%= g.id %></span>
+      <!-- TODO: not elegant; make DRY -->
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
         <%= image_tag g.opp[-2..-1] + '.png', :class => 'responsive-img team-logo' %>
       <% elsif g.opp[-4..-1] == 'UTAH' %>
         <%= image_tag 'UTAH.png', :class => 'responsive-img team-logo' %>
       <% else %>
         <%= image_tag g.opp.last(3) + '.png', :class => 'responsive-img team-logo' %>
-      <% end %>>
+      <% end %>
     </div>
 
   <% elsif g.next_game? == false %>
@@ -47,6 +49,7 @@
       onclick="swapGame(<%= g.id %>);"
     >
       <h6><%= g.score %></h6>
+      <!-- TODO: not elegant; make DRY -->
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
         <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[-2..-1] %></h4>
       <% elsif g.opp[-4..-1] == 'UTAH' %>
@@ -63,6 +66,7 @@
       style="display: none;"
       onclick="swapGame(<%= g.id %>);"
     >
+      <!-- TODO: not elegant; make DRY -->
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
         <%= image_tag g.opp[-2..-1] + '.png', :class => 'responsive-img team-logo' %>
       <% elsif g.opp[-4..-1] == 'UTAH' %>
@@ -76,6 +80,7 @@
 
     <div class="col l2 s4 next-nav">
       <h6>NEXT UP</h6>
+      <!-- TODO: not elegant; make DRY -->
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
         <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[-2..-1] %></h4>
       <% elsif g.opp[-4..-1] == 'UTAH' %>
