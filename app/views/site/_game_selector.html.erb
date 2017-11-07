@@ -30,7 +30,13 @@
       onclick="swapGame(<%= g.id %>);"
     >
       <span class="initially-loaded-game" style="display: none;"><%= g.id %></span>
-      <%= image_tag g.opp.last(3) + '.png', :class => 'responsive-img team-logo' %>
+      <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
+        <%= image_tag g.opp[-2..-1] + '.png', :class => 'responsive-img team-logo' %>
+      <% elsif g.opp[-4..-1] == 'UTAH' %>
+        <%= image_tag 'UTAH.png', :class => 'responsive-img team-logo' %>
+      <% else %>
+        <%= image_tag g.opp.last(3) + '.png', :class => 'responsive-img team-logo' %>
+      <% end %>>
     </div>
 
   <% elsif g.next_game? == false %>
