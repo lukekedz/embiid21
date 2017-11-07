@@ -1,10 +1,12 @@
 <div class="col l5 s12 stats">
   <div class="row first-row">
     <div class="col l4 s4">
-      <% if game.opp[-4..-1] == 'UTAH' %>
+      <% if ['GS', 'NO', 'NY', 'SA'].include?(game.opp[-2..-1]) %>
+        <h4><%= game.opp[-2..-1] %></h4>
+      <% elsif game.opp[-4..-1] == 'UTAH' %>
         <h4>UTAH</h4>
       <% else %>
-        <h4><%= game.opp[1..3] %></h4>
+        <h4><%= game.opp.last(3) %></h4>
       <% end %>
       <p class="title2"><%= Date.parse(game.game_date).strftime('%^B %-d') %></p>
     </div>
