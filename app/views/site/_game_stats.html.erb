@@ -1,6 +1,7 @@
 <div class="col l5 s12 stats">
   <div class="row first-row">
     <div class="col l4 s4">
+      <!-- TODO: not elegant; make DRY -->
       <% if ['GS', 'NO', 'NY', 'SA'].include?(game.opp[-2..-1]) %>
         <h4><%= game.opp[-2..-1] %></h4>
       <% elsif game.opp[-4..-1] == 'UTAH' %>
