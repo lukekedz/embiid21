@@ -14,7 +14,11 @@
       onclick="swapGame(<%= g.id %>);"
     >
       <h6><%= g.score %></h6>
-      <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp.last(3) %></h4>
+      <% if g.opp.length == 4 %>
+        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp.last(3) %></h4>
+      <% else %>
+        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[1..3] %></h4>
+      <% end %>
       <h6><%= Date.parse(g.game_date).strftime('%^B %-d') %></h6>
     </div>
 
@@ -35,7 +39,11 @@
       onclick="swapGame(<%= g.id %>);"
     >
       <h6><%= g.score %></h6>
-      <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp.last(3) %></h4>
+      <% if g.opp.length == 4 %>
+        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp.last(3) %></h4>
+      <% else %>
+        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[1..3] %></h4>
+      <% end %>
       <h6><%= Date.parse(g.game_date).strftime('%^B %-d') %></h6>
     </div>
 
@@ -52,7 +60,11 @@
 
     <div class="col l2 s4 next-nav">
       <h6>NEXT UP</h6>
-      <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp.last(3) %></h4>
+      <% if g.opp.length == 4 %>
+        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp.last(3) %></h4>
+      <% else %>
+        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[1..3] %></h4>
+      <% end %>
       <h6><%= Date.parse(g.game_date).strftime('%^B %-d') %></h6>
     </div>
 
