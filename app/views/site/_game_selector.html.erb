@@ -15,7 +15,7 @@
     >
       <h6><%= g.score %></h6>
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
-        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><% g.opp[-2..-1] %></h4>
+        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[-2..-1] %></h4>
       <% elsif g.opp[-4..-1] == 'UTAH' %>
         <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span>UTAH</h4>
       <% else %>
@@ -42,7 +42,7 @@
     >
       <h6><%= g.score %></h6>
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
-        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><% g.opp[-2..-1] %></h4>
+        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[-2..-1] %></h4>
       <% elsif g.opp[-4..-1] == 'UTAH' %>
         <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span>UTAH</h4>
       <% else %>
@@ -65,7 +65,7 @@
     <div class="col l2 s4 next-nav">
       <h6>NEXT UP</h6>
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
-        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><% g.opp[-2..-1] %></h4>
+        <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[-2..-1] %></h4>
       <% elsif g.opp[-4..-1] == 'UTAH' %>
         <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span>UTAH</h4>
       <% else %>
