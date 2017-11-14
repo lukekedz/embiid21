@@ -5,7 +5,7 @@
       <% if ['GS', 'NO', 'NY', 'SA'].include?(game.opp[-2..-1]) %>
         <h4><%= game.opp[-2..-1] %></h4>
       <% elsif game.opp[-4..-1] == 'UTAH' %>
-        <h4>UTAH</h4>
+        <h4>UTA</h4>
       <% else %>
         <h4><%= game.opp.last(3) %></h4>
       <% end %>
