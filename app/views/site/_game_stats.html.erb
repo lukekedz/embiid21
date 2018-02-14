@@ -9,7 +9,15 @@
       <% else %>
         <h4><%= game.opp.last(3) %></h4>
       <% end %>
-      <p class="title2"><%= Date.parse(game.game_date).strftime('%^B %-d') %></p>
+      <p class="title2">
+        <% if game.score.to_s[0] == 'W' %> 
+          <span style="color: #007f00;"><%= game.score.to_s[0] %></span>
+          <%= game.score.to_s[1..-1] %>
+        <% else %>
+          <span style="color: #bf0000;"><%= game.score.to_s[0] %></span>
+          <%= game.score.to_s[1..-1] %>
+        <% end %>
+      </p>
     </div>
     <div class="col l4 s4">
       <h4><%= if game.pts then game.pts end %></h4>
