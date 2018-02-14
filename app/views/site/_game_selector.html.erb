@@ -13,7 +13,15 @@
       style="display: none;"
       onclick="swapGame(<%= g.id %>);"
     >
-      <h6><%= g.score %></h6>
+      <h6>
+        <% if g.score[0] == 'W' %> 
+          <span style="color: #007f00;"><%= g.score[0] %></span>
+          <%= g.score[1..-1] %>
+        <% else %>
+          <span style="color: #bf0000;"><%= g.score[0] %></span>
+          <%= g.score[1..-1] %>
+        <% end %>
+      </h6>
       <!-- TODO: not elegant; make DRY -->
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
         <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[-2..-1] %></h4>
@@ -48,7 +56,13 @@
       id="nav-text-<%= g.id %>"
       onclick="swapGame(<%= g.id %>);"
     >
-      <h6><%= g.score %></h6>
+      <% if g.score[0] == 'W' %> 
+        <span style="color: #007f00;"><%= g.score[0] %></span>
+        <%= g.score[1..-1] %>
+      <% else %>
+        <span style="color: #bf0000;"><%= g.score[0] %></span>
+        <%= g.score[1..-1] %>
+      <% end %>
       <!-- TODO: not elegant; make DRY -->
       <% if ['GS', 'NO', 'NY', 'SA'].include?(g.opp[-2..-1]) %>
         <h4><span class="nav-home-away-ind"><%= g.opp[0] == 'v' ? 'vs. ' : '@ ' %></span><%= g.opp[-2..-1] %></h4>
