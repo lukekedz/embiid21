@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get  'site/refresh_joel_on_twitter'
   get  'site/refresh_twitter_on_joel'
   get  'site/instagram'
+  get  'site/history'
 
   # rapsi
   get  'site/last_stat_record'

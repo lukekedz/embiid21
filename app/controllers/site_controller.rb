@@ -111,6 +111,11 @@ class SiteController < ApplicationController
     # <a href="" class="insta-btn">flip to 'GRAMS</a>
   end
 
+  def history
+    most_recent_played_game = Stat.where(next_game?: true)[0].id - 1
+    @stats = Stat.where(id: 1..most_recent_played_game)
+  end
+
   private
 
   def ip_authorized?

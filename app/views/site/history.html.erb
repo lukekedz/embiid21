@@ -1,0 +1,53 @@
+<br/>
+<div class="col s12 center-align">
+  <table class="bordered highlight centered responsive-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>DATE</th>
+        <th>OPP</th>
+        <th>SCORE</th>
+        <th>MIN</th>
+        <th>FGM-FGA</th>
+        <th>FG%</th>
+        <th>3M-3A</th>
+        <th>3%</th>
+        <th>FTM-FTA</th>
+        <th>FT%</th>
+        <th>REB</th>
+        <th>AST</th>
+        <th>BLK</th>
+        <th>STL</th>
+        <th>PTS</th>
+        <th>VIDEO</th>
+        <th>GIPHY</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @stats.each do |game| %>
+      <tr>
+        <td class="shirley"><%= image_tag 'shirley.svg' %></td>
+        <td><%= game.game_date %></td>
+        <td><%= game.opp %></td>
+        <td><%= game.score %></td>
+        <td><%= game.min %></td>
+        <td><%= game.fgm_fga %></td>
+        <td><%= game.fg_prct %></td>
+        <td><%= game.three_m_a %></td>
+        <td><%= game.three_prct %></td>
+        <td><%= game.ftm_fta %></td>
+        <td><%= game.ft_prct %></td>
+        <td><%= game.reb %><%= image_tag 'shirley.svg', :class => 'shirley-in-table' %></td>
+        <td><%= game.ast %></td>
+        <td><%= game.blk %></td>
+        <td><%= game.stl %></td>
+        <td><%= game.pts %></td>
+        <td><a href="/">video</a></td>
+        <td><a href="/">giphy</a></td>
+      </tr>
+    <% end %>
+    </tbody>
+
+  </table>
+
+</div>
